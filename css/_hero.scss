@@ -1,0 +1,48 @@
+@use 'variable.scss' as c;
+
+.hero{
+    position:relative;
+    width:100%;
+    .block{
+        position:absolute;
+        top:180px;        
+        left:400px;
+        width:550px;
+        z-index:2;
+        img{
+            margin-bottom:2rem;
+        }
+    }
+    picture{
+        width:100%;
+        z-index:-1;
+        img{
+            width:100%;
+        }
+    }      
+    &__title{
+        font:c.$ff-h1-hm;
+        color:c.$bg;
+        text-transform:uppercase;        
+    }
+    &__txt{
+        font:c.$ff-dsc-hm;
+        color:c.$bg;
+    }
+    &__btn{
+        color:c.$principal;
+    }
+    @media screen and (max-width:1024px){
+        .block{
+            top:180px;
+            left:20px;
+            width:280px;
+        }
+        &__title{
+            font:c.$ff-h1-sm;
+        }
+        &__txt{
+            font:c.$ff-dsc-mm;
+        }
+    }
+}

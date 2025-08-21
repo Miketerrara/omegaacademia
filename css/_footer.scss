@@ -1,0 +1,72 @@
+@use 'variable.scss' as c;
+
+footer{
+    background: c.$principal-h;
+    color: c.$bg;
+    padding: 2.4rem 2rem;
+    font: 300 1.4rem/2.8rem c.$ff;
+    img{
+        height:8rem;
+        width:auto;
+    }
+    .foot{
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap:wrap;
+        &__tel{
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            flex-wrap:nowrap;
+        }
+        strong{
+            font-weight:900;
+            color:c.$secondary;
+            transition:c.$transition;
+            &:hover{
+                color:c.$secondary-h;
+            }
+        }
+    }
+    
+    .txt__white{
+        letter-spacing:4px;
+    }
+    div{
+        a{
+            font-size:1.4rem;
+            color:c.$bg;
+            transition:c.$transition;
+            &:hover{
+                color:c.$txtColor;
+            }
+        } 
+        p{
+            font-size:1.4rem;
+        }
+        i{
+            font-size:2rem;
+            margin-right:2rem;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        img{
+            height:6.4rem;
+        }
+        .foot{
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+            gap:2rem;
+        }
+        .txt__white{
+            letter-spacing:1px;
+            font:300 1.4rem/1.5rem c.$ff;
+            text-align:center;
+
+        }
+    }
+    
+}

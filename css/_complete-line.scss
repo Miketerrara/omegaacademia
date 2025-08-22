@@ -43,7 +43,7 @@
             font:400 1.4rem c.$ff;                    
         }
         .txt-equip{
-            color:c.$txtColor;
+            color:c.$principal-h;
         }
         .fi{
             color:$c;                
@@ -71,7 +71,7 @@
     height:32rem;
     position:relative;
     &__title, &__txt{
-        color:c.$txtColor;
+        color:c.$principal-h;
         width:44rem;
     }
     &__title{

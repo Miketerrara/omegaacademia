@@ -6,31 +6,31 @@
     .block{
         position:absolute;
         top:180px;        
-        left:400px;
-        width:550px;
+        left:320px;
+        width:65rem;
         z-index:2;
-        img{
-            margin-bottom:2rem;
-        }
     }
-    picture{
-        width:100%;
-        z-index:-1;
-        img{
-            width:100%;
-        }
-    }      
+    video{
+        filter:contrast(1.25) saturate(.4) brightness(.25) blur(5px);
+    }     
     &__title{
-        font:c.$ff-h1-hm;
+        font:900 9.6rem/9.6rem c.$ff;
         color:c.$bg;
         text-transform:uppercase;        
     }
     &__txt{
         font:c.$ff-dsc-hm;
+        letter-spacing:3px;
+        margin-top:.8rem;
         color:c.$bg;
     }
     &__btn{
-        color:c.$principal;
+        font:c.$ff-btn;
+        text-transform:uppercase;
+        color:c.$bg;
+        width:42rem;
+        height:7.6rem;
+        margin-top:2rem;
     }
     @media screen and (max-width:1024px){
         .block{

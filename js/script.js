@@ -7,114 +7,38 @@ const elements = {
     boxFaq: document.querySelectorAll('.box-faq'),
     resposta: document.querySelectorAll('.response'),
     chevron: document.querySelectorAll('.fi-ts-angle-small-down'),
-    nxt: document.querySelector('.nxt'),
-    prv:document.querySelector('.prv'),
-    photo: document.getElementById('project-photo'),
-    modal:document.getElementById('modal'),
-    linhaTx:document.getElementById('l01'),
-    linhaSx:document.getElementById('l02'),
-    linhaMac:document.getElementById('l03'),
+    modal:document.querySelectorAll('.modal'),
     dsModal:document.querySelectorAll('.close'),
-    dsModalPlanos:document.querySelector('.close-md-planos'),
-    modalPlanos: document.getElementById('md-planos'),
-    openModal: document.getElementById('open-md-planos'),
-    equipItens: document.querySelectorAll('.box-equipment'),
-    bannerHero: document.querySelectorAll('.hero-complete-line')
+    btnFranqueado: document.querySelector('.open-toggle'),
+    unidadeBtn: document.querySelectorAll('.unidades__plans-btn'),
+    franquiasTypeof: document.querySelectorAll('.franquias__opt'),
+    franquiasDscTypes: document.querySelectorAll('.dl'),
+    franquiasTitleTypes: document.querySelectorAll('.unidades__plans-title'),
+    tagsBeneficios: document.querySelector('.tags'),
+    tagsTitle: document.querySelector('.title-tag'),
+    tagsDsc: document.querySelector('.dsc-tag')
 }
-const _gallery = [
-    [
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0040.jpg", "", "Linha Alfa TX - TX1052", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0041.jpg", "", "Linha Alfa TX - TX1054", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0046.jpg", "", "Linha Alfa TX - TX1015", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0047.jpg", "", "Linha Alfa TX - TX1040", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],        
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0044.jpg", "", "Linha Alfa TX - TX1025-EP", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0041.jpg", "", "Linha Alfa TX - TX1054", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0043.jpg", "", "Linha Alfa TX - TX1020", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0042.jpg", "", "Linha Alfa TX - TX1015-EP", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],        
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0045.jpg", "", "Linha Alfa TX - TX1051", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0050.jpg", "", "Linha Alfa TX - TX1055", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0051.jpg", "", "Linha Alfa TX - TX1058", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0052.jpg", "", "Linha Alfa TX - TX1070", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],        
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0054.jpg", "", "Linha Alfa TX - TX1060", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0056.jpg", "", "Linha Alfa TX - TX1080", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0057.jpg", "", "Linha Alfa TX - TX1085", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0058.jpg", "", "Linha Alfa TX - TX2020", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],        
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0059.jpg", "", "Linha Alfa TX - TX2012", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],        
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0060.jpg", "", "Linha Alfa TX - TX2022", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0061.jpg", "", "Linha Alfa TX - TX2010", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0062.jpg", "", "Linha Alfa TX - TX2028", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0063.jpg", "", "Linha Alfa TX - TX2040", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],       
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0064.jpg", "", "Linha Alfa TX - TX2051", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0065.jpg", "", "Linha Alfa TX - TX2042", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0066.jpg", "", "Linha Alfa TX - TX2050", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0067.jpg", "", "Linha Alfa TX - TX2059", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],        
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0068.jpg", "", "Linha Alfa TX - TX2057", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],        
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0069.jpg", "", "Linha Alfa TX - TX2084", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0070.jpg", "", "Linha Alfa TX - TX2061", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0071.jpg", "", "Linha Alfa TX - TX2090", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0072.jpg", "", "Linha Alfa TX - TX2055", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e porta garrafas que aumentam a sua conveniência no momento do treino."]       
-    ],
-    [
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0073.jpg", "", "Linha Alfa SX - SX2099", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/SX1060 - Apolete.png", "", "Linha Alfa SX - SX1060", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/SX1052.png", "", "Linha Alfa SX - SX1052", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0078.jpg", "", "Linha Alfa SX - SX1025-EP", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],      
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0079.jpg", "", "Linha Alfa SX - SX1015-EP", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0080.jpg", "", "Linha Alfa SX - SX1054", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0081.jpg", "", "Linha Alfa SX - SX1040", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0082.jpg", "", "Linha Alfa SX - SX1051", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],      
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0084.jpg", "", "Linha Alfa SX - SX1052", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0085.jpg", "", "Linha Alfa SX - SX1058", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0086.jpg", "", "Linha Alfa SX - SX1055", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0087.jpg", "", "Linha Alfa SX - SX1078", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],      
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0088.jpg", "", "Linha Alfa SX - SX1070", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0090.jpg", "", "Linha Alfa SX - SX1080", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0091.jpg", "", "Linha Alfa SX - SX1085", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0093.jpg", "", "Linha Alfa SX - SX2010", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],      
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0096.jpg", "", "Linha Alfa SX - SX2012", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],      
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0094.jpg", "", "Linha Alfa SX - SX2020", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0098.jpg", "", "Linha Alfa SX - SX2022", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0097.jpg", "", "Linha Alfa SX - SX2028", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0095.jpg", "", "Linha Alfa SX - SX2040", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],      
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0099.jpg", "", "Linha Alfa SX - SX2042", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0100.jpg", "", "Linha Alfa SX - 2090", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],      
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0101.jpg", "", "Linha Alfa SX - SX2050", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0103.jpg", "", "Linha Alfa SX - SX2059", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0104.jpg", "", "Linha Alfa SX - SX2051", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0105.jpg", "", "Linha Alfa SX - SX2090", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],      
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0106.jpg", "", "Linha Alfa SX - SX2061", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],      
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0107.jpg", "", "Linha Alfa SX - SX2095", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0102.jpg", "", "Linha Alfa SX - SX2055", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."],
-        ["./sources/Máquinas Alfa/IMG-20250328-WA0108.jpg", "", "Linha Alfa SX - SX2057", "Estofado de alta resistência e formato anatômico para maior conforto ao fazer seus exercícios, porta objetos e garrafas que aumentam a sua conveniência no momento do treino. Ideal para quem quer treinar com em um ambiente mais agradável."]
-    ],
-    [
-        ["./sources/maquinas-sigma/recortadas/cross-angular-smith.png", "", "Linha Sigma", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],
-        ["./sources/maquinas-sigma/crossover-tradicional.png", "", "Linha Sigma", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],
-        ["./sources/maquinas-sigma/Gluteo-Deslizante.jpeg", "", "Linha Sigma", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],
-        ["./sources/maquinas-sigma/recortadas/panturilha-agachamento.png", "", "Linha Sigma", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],      
-        ["./sources/maquinas-sigma/recortadas/peck-deck.png", "", "Linha Sigma", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],      
-        ["./sources/maquinas-sigma/Polia-Regulavel-Simples-1.jpg", "", "Linha Sigma", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],      
-        ["./sources/maquinas-sigma/Pulley-com-Remada-6.jpeg", "", "Linha Sigma", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],      
-        ["./sources/maquinas-sigma/recortadas/Remada-Sentada-Maquina.png", "", "Linha Sigma", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],      
-        ["./sources/maquinas-sigma/Supino-Vertical-Maquina-3.jpeg", "", "Linha Sigma", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."]     
-    ],
-    [
-        ["./sources/maquina-cromus/Desenv.-Ombro-Maquina-_1_.png", "", "Linha Cromus", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],
-        ["./sources/maquina-cromus/Extensora.jpg", "", "Linha Cromus", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],
-        ["./sources/maquina-cromus/Flexora-Vertical-Cromus-2.jpg", "", "Linha Cromus", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],
-        ["./sources/maquina-cromus/Gluteo-Deslizante-2.jpeg", "", "Linha Cromus", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],      
-        ["./sources/maquina-cromus/Panturilha-Vertical-3.jpg", "", "Linha Cromus", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],      
-        ["./sources/maquina-cromus/Remada-Sentada-Maquina-2.png", "", "Linha Cromus", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."],      
-        ["./sources/maquina-cromus/Supino-Multi-Funcional-Maquina-4-1.jpg", "", "Linha Cromus", "Estofado produzido em Courvin padrão Náutico Antimofo para maior durabilidade e custo benefício, cabos de aço em Nylon (alta resistência), mais segurança nos movimentos dos seus exercícios."]       
-    ]
-]
-function modal() {
 
-    elements.modalPlanos.style.display = "block";
+elements.unidadeBtn.forEach((item, index) => {
+    item.addEventListener('click', ()=> {
+        elements.modal[index].classList.toggle("modal--active");
+    })
+});
 
-    elements.dsModalPlanos.addEventListener('click', () => {
-        elements.modalPlanos.style.display = 'none';
-    })    
+if (document.querySelector('.franqueado')) {
+    elements.btnFranqueado.addEventListener('click', () => {
+        elements.btnFranqueado.classList.add('franqueado--active');
+        let franquiaActive = document.querySelector('.franqueado')
+        let btnActive = document.querySelector('.franqueado__opened');
+        let btnDeactive = document.querySelector('.franqueado__close');
+    
+        btnActive.classList.add('franqueado__opened--active');
+        franquiaActive.classList.add('franqueado--active');
+        btnDeactive.classList.add('franqueado__close--deactive');
+    
+        console.log(elements.dsModal);
+    })
+
 }
 
 if (document.querySelector('#beneficios')) {
@@ -238,25 +162,34 @@ if (document.querySelector('#beneficios')) {
         })
     });
     
-    elements.faq.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            elements.boxFaq[index].classList.toggle('box-faq--active');
-            if (elements.boxFaq[index].classList.contains('box-faq--active')){
-                elements.chevron[index].style.rotate = "-90deg";
-            }else{
-                elements.chevron[index].style.rotate = "0deg";
-            }
-            elements.resposta[index].classList.toggle('response--active');
-    
-            console.log('clicou certo!')
-        });
-    });
 }
-let tx = _gallery[0];
-let sx = _gallery[1];
-let sigma = _gallery[2];
-let cromus = _gallery[3];
+elements.faq.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        console.log('clicou certo!')
+        elements.boxFaq[index].classList.toggle('box-faq--active');
+        if (elements.boxFaq[index].classList.contains('box-faq--active')){
+            elements.chevron[index].style.rotate = "-90deg";
+        }else{
+            elements.chevron[index].style.rotate = "0deg";
+        }
+        elements.resposta[index].classList.toggle('response--active');
 
+        
+    });
+});
+
+elements.dsModal.forEach((item) => {
+    item.addEventListener('click', () => {
+        let btnActive = document.querySelector('.franqueado__opened');
+        let btnDeactive = document.querySelector('.franqueado__close');
+        let franquiaActive = document.querySelector('.franqueado')
+
+        franquiaActive.classList.remove('franqueado--active');
+        btnActive.classList.remove('franqueado__opened--active');
+        btnDeactive.classList.remove('franqueado__close--deactive');
+        elements.btnFranqueado.classList.remove('franqueado--active');
+    });
+});
 
 function openModalEquip() {
     let modalEquip = document.getElementById('m01');    
@@ -264,15 +197,7 @@ function openModalEquip() {
     modalEquip.style.display = 'none';    
     modalEquip.style.display = 'block';
 }
-
-function dsModal(modals){
-    elements.dsModal.forEach((item) => {
-        item.addEventListener('click', () => {
-            console.log('apertei pra fechar o modal')
-            modals.style.display = 'none';
-        });
-    });
-}
+//senha transwar wi-fi ADM: Tw@#$1987
 function switchModal(index){
     if (document.querySelector("#sigma")) {
         modalEquip.style.display = 'none';    
@@ -341,16 +266,202 @@ function switchModal(index){
 //document.querySelector(".modal__infos").children[0]
 let modalEquip = document.getElementById('m01'); 
 
-elements.equipItens.forEach((item, index) => {
-    item.addEventListener('click', ()=>{
-    switchModal(index);
+if (document.querySelector('.toggle')) {
+    elements.burgerToggle.addEventListener('click', () =>{
+        elements.menu.classList.toggle('menu-toggle--active');
+    });
+    
+    elements.close.addEventListener('click', () =>{
+        elements.burgerToggle.dispatchEvent(new Event('click'));
+    });
+
+}
+if (document.querySelector('.nav-franquia')) {
+
+    const _typeNormal = [
+        ['./sources/foto-franquia-omega.jpg', './sources/unidades-academia_02.jpg', './sources/image-academia-contato_01.jpg'],
+        ['Free Basic 500m²', 'Premium 1000m²', 'Be 2000m²'],
+        ['entre 80m² à 500m²','entre 600m² à 1000m²', 'entre 1020m² à 2000m²'],
+        ['8%', '8,5%', '9%'],
+        ['3,5%', '4%', '5%']
+    ];
+    const _typeCondom = [
+        ['./sources/image-franquia-condom.jpg', './sources/image-franquia-condom_02.png', './sources/image-franquia-condom_03.png'],
+        ['Basic condom', 'Premium condom', 'Be condom'],
+        ['entre 40m² à 70m²','entre 80m² à 96m²', 'entre 100m² à 200m²'],
+        ['4%', '4,5%', '5%'],
+        ['3%', '3,2%', '3,5%']
+    ];
+    const _beneficios = [
+        ['investimento inicial', 'Rentabilidade', 'Marketing', 'Suporte', 'Treinamento'],
+        [
+            'Conquiste sua franquia com um investimento inicial de: R$240 mil. Incluso aluguel de máquinas.',
+            'Lorem ipsum dolor sit amet',
+            'Suporte total a estratégias de marketing digital e offline, desenvolvimento de peças e campanhas gerais e individuais de cada franqueado',
+            'Suporte na gestão dos recursos, financeiro, dentre outros. Para facilitar o franqueado a manter sua academia no mais alto desempenho.',
+            'Treinamento de funcionários e gestores de academia, introduzindo-os aos processos de vendas e processos de gestão e manutenção de recursos.'
+        ]
+    ]
+    let imgFranquias = document.querySelectorAll('.unidades__plans-img');
+    elements.franquiasTypeof.forEach((item, index) => {
+        item.addEventListener('click', () =>{
+            elements.franquiasTypeof.forEach(el => el.classList.add('deactive'));
+            item.classList.remove('deactive');
+
+            switch (index) {
+                case 0:
+                    imgFranquias[0].setAttribute('src', _typeNormal[0][index]);
+                    elements.franquiasTitleTypes[0].innerHTML = _typeNormal[1][index];
+                    imgFranquias[1].setAttribute('src', _typeCondom[0][index]);
+                    elements.franquiasTitleTypes[1].innerHTML = _typeCondom[1][index];
+                    elements.franquiasDscTypes[0].innerHTML = _typeNormal[2][index];
+                    elements.franquiasDscTypes[1].innerHTML = _typeNormal[3][index];
+                    elements.franquiasDscTypes[2].innerHTML = _typeNormal[4][index];
+                    elements.franquiasDscTypes[3].innerHTML = _typeCondom[2][index];
+                    elements.franquiasDscTypes[3].innerHTML = _typeCondom[2][index];
+                    elements.franquiasDscTypes[3].innerHTML = _typeCondom[2][index];
+                break;
+                case 1:
+                    imgFranquias[0].setAttribute('src', _typeNormal[0][index]);
+                    elements.franquiasTitleTypes[0].innerHTML = _typeNormal[1][index];
+                    imgFranquias[1].setAttribute('src', _typeCondom[0][index]);
+                    elements.franquiasTitleTypes[1].innerHTML = _typeCondom[1][index];
+                    elements.franquiasDscTypes[0].innerHTML = _typeNormal[2][index];
+                    elements.franquiasDscTypes[1].innerHTML = _typeNormal[3][index];
+                    elements.franquiasDscTypes[2].innerHTML = _typeNormal[4][index];
+                    elements.franquiasDscTypes[3].innerHTML = _typeCondom[2][index];
+                    elements.franquiasDscTypes[4].innerHTML = _typeCondom[3][index];
+                    elements.franquiasDscTypes[5].innerHTML = _typeCondom[4][index];
+                break;
+                case 2:
+                    imgFranquias[0].setAttribute('src', _typeNormal[0][index]);
+                    elements.franquiasTitleTypes[0].innerHTML = _typeNormal[1][index];
+                    imgFranquias[1].setAttribute('src', _typeCondom[0][index]);
+                    elements.franquiasTitleTypes[1].innerHTML = _typeCondom[1][index];
+                    elements.franquiasDscTypes[0].innerHTML = _typeNormal[2][index];
+                    elements.franquiasDscTypes[1].innerHTML = _typeNormal[3][index];
+                    elements.franquiasDscTypes[2].innerHTML = _typeNormal[4][index];
+                    elements.franquiasDscTypes[3].innerHTML = _typeCondom[2][index];
+                    elements.franquiasDscTypes[4].innerHTML = _typeCondom[3][index];
+                    elements.franquiasDscTypes[5].innerHTML = _typeCondom[4][index];
+                break;
+            }
+        })
     })
-});
 
-elements.burgerToggle.addEventListener('click', () =>{
-    elements.menu.classList.toggle('menu-toggle--active');
-});
+    let tags = Array.from(elements.tagsBeneficios.children);
 
-elements.close.addEventListener('click', () =>{
-    elements.burgerToggle.dispatchEvent(new Event('click'));
-});
+    tags.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            tags.forEach((el) => {
+                el.classList.add('tag--deactive');
+                el.classList.remove('tag');
+            });
+            item.classList.add('tag');
+            item.classList.remove('tag--deactive');
+
+            switch(index) {
+                case 0:
+                    elements.tagsTitle.innerHTML = _beneficios[0][index];
+                    elements.tagsDsc.innerHTML = _beneficios[1][index];
+                    break;
+                case 1:
+                    elements.tagsTitle.innerHTML = _beneficios[0][index];
+                    elements.tagsDsc.innerHTML = _beneficios[1][index];
+                    break;
+                case 2:
+                    elements.tagsTitle.innerHTML = _beneficios[0][index];
+                    elements.tagsDsc.innerHTML = _beneficios[1][index];
+                    break;
+                case 3:
+                    elements.tagsTitle.innerHTML = _beneficios[0][index];
+                    elements.tagsDsc.innerHTML = _beneficios[1][index];
+                    break;
+                case 4:
+                    elements.tagsTitle.innerHTML = _beneficios[0][index];
+                    elements.tagsDsc.innerHTML = _beneficios[1][index];
+                    break;
+            }
+        })
+    })
+    console.log(elements.tagsTitle.innerHTML);
+}
+if (document.querySelector('.horarios')) {
+    const hoje = document.getElementById('today');
+    const diaAtual = document.getElementById('current-day');
+
+
+    hoje.innerHTML = new Date().getDate();
+    let namedDay = diaAtual.innerHTML = new Date().getDay();
+    console.log(namedDay)
+    switch(namedDay) {
+        case 0:
+            diaAtual.innerHTML = "Domingo";
+            break;
+        case 1:
+            diaAtual.innerHTML = "Segunda-feira";
+            break;
+        case 2:
+            diaAtual.innerHTML = "Terça-feira";
+            break;
+        case 3:
+            diaAtual.innerHTML = "Quarta-feira";
+            break;
+        case 4:
+            diaAtual.innerHTML = "Quinta-feira";
+            break;
+        case 5:
+            diaAtual.innerHTML = "Sexta-feira";
+            break;
+        case 6:
+            diaAtual.innerHTML = "Sábado";
+            break;
+    }
+    
+    let diasMes = Array.from(document.querySelectorAll('.horarios__tab-daynumb')).filter(dia => dia !== hoje);
+    let diasSemana = Array.from(document.querySelectorAll('.horarios__tab-day')).filter(dia => dia !== diaAtual);
+    //laço que pega os números dos dias do Mês
+    for (let i = 0; i < diasMes.length; i++) {
+        // Converte o valor de hoje.innerHTML para número
+        let baseDay = parseInt(hoje.innerHTML, 10);
+        // Calcula o novo valor para o dia, somando o índice + 1 ao dia base
+        let dayMonth = diasMes[i].innerHTML = baseDay + i + 1;
+        
+        const currentMonth = new Date().getMonth();
+        const currentYear = new Date().getFullYear();
+        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+        if (dayMonth > daysInMonth) {
+            diasMes[i].innerHTML = dayMonth - daysInMonth;
+        }
+    }
+
+    for (let c=0; c>=7;c++){
+        let dayWeek = diasSemana[c].innerHTML = namedDay + c + 1;
+        switch(dayWeek) {
+            case 0:
+            diasSemana[c].innerHTML = "Domingo";
+            break;
+            case 1:
+            diasSemana[c].innerHTML = "Segunda-feira";
+            break;
+            case 2:
+            diasSemana[c].innerHTML = "Terça-feira";
+            break;
+            case 3:
+            diasSemana[c].innerHTML = "Quarta-feira";
+            break;
+            case 4:
+            diasSemana[c].innerHTML = "Quinta-feira";
+            break;
+            case 5:
+            diasSemana[c].innerHTML = "Sexta-feira";
+            break;
+            case 6:
+            diasSemana[c].innerHTML = "Sábado";
+            break;
+        }
+    }
+    console.log(new Date().getMonth());
+    
+}

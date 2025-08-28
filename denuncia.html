@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Whatsapp omega acadeemia, Omega academia, Academia, academia em Campinas, contato, entrar em contato, Omega academia contato, Campinas e região, academia boa para ansiedade, academia para idosos, academia para crianças, academia sem fidelidade, saúde e bem estar, bem estar, qualidade de vida, Campinas, São Paulo">
+    <meta name="description" content="A Omega Academia é a maior franquia de academias da região de Campinas e conta com uma estrutura que se adequa a qualquer necessidade, além de um excelente atendimento. Vem treinar com quem se importa com você!">
+    <meta name="author" content="Agbe soluções">
+    <meta name="geo.region" content="BR-SP" />
+    <meta name="geo.placename" content="Campinas" />
+    <meta name="geo.position" content="-28.480649;-53.111859" />
+    <meta name="ICBM" content="-28.480649, -53.111859" />
+    <meta name="robots" content="">
+    <meta name="revisit-after" content="7 day">
+    <link rel="shortcut icon" href="./sources/favicon-16x.png" sizes="16px" type="image/x-icon">
+    <link rel="shortcut icon" href="./sources/favicon-32x.png" sizes="32px" type="image/x-icon">
+    <link rel="shortcut icon" href="./sources/favicon-64x.png" sizes="64px" type="image/x-icon">
+    <link rel="shortcut icon" href="./sources/favicon-8x.png" sizes="8px" type="image/x-icon">
+    <link rel='stylesheet' href='./node_modules/@flaticon/flaticon-uicons/css/all/all.css'>
+    <link rel='stylesheet' href='./node_modules/@flaticon/flaticon-uicons/css/regular/all.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <title>Contato</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="nav-franquia">
+        <nav>
+            <div class="container">
+                <a href="index.html" target="_self">
+                    <img src="./sources/logotipo-white-100x.png" height="60px" alt="logotipo Omega Academia">
+                </a>
+                <div class="gtranslate_wrapper"></div>    
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="contact">
+                    <div class="contact__dsc">
+                        <h3 class="title">Olá!</h3>
+                        <p class="txt">Preencha seus dados ao lado e conte-nos sobre o seu problema.</p>
+                    </div>
+                    <div class="contact__locale">
+                        <form action="paraenviar.php" method="get" target="paraenviar" class="contact__form">
+                            <fieldset>
+                                <label for="nomecompleto">Nome Completo</label>
+                                <input type="text" name="nomecompleto" id="nomecompleto" placeholder="Nome Completo">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" name="telefone" id="telefone" placeholder="(19) 9 9999.9999">
+                                <label for="cpf">CPF</label>
+                                <input type="text" name="cpf" id="cpf" placeholder="xxx.xxx.xxx-xx">
+                                <label for="email">E-mail</label>
+                                <input type="email" name="email" id="email" placeholder="seunome@contato.com.br">
+                                <fieldset class="radio-group" >
+                                    <label>
+                                        <input type="radio" name="tipo_denuncia" value="Não sou cliente" required>
+                                        Não sou cliente
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="tipo_denuncia" value="Sou cliente">
+                                        Sou cliente
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="tipo_denuncia" value="Personal Trainer">
+                                        Personal Trainer
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="tipo_denuncia" value="Franqueado">
+                                        Franqueado
+                                    </label>
+                                </fieldset>
+                            </fieldset>
+                            <fieldset style="display:flex; justify-content:space-between; align-items:center;">
+                                <label style="width:50%;" for="estado">Estado<input type="text" name="estado" id="estado" placeholder="Seu estado"></label>
+                                
+                                <label style="width:50%;" for="cidade">Cidade <input type="text" name="cidade" id="cidade" placeholder="Sua cidade"></label>
+                                
+                            </fieldset>
+                            <fieldset>
+                                <label for="contrato">Tipo de contrato</label>
+                                <select name="contrato" id="contrato">
+                                    <option value="Basic" disabled selected>--select--</option>
+                                    <option value="Basic">Contrato Basic</option>
+                                    <option value="Premium">Contrato Premium</option>
+                                    <option value="Clube Be ">Contrato Clube Be</option>
+                                    <option value="Nenhum">Nenhum</option>
+                                </select>
+                                <label for="assunto">Assunto</label>
+                                <input type="text" name="assunto" id="assunto" placeholder="Motivo do contato">
+                                <label for="message">Mensagem</label>
+                                <textarea name="message" id="message" placeholder="Digite sua mensagem"></textarea>
+                                <input type="submit" class="submit" value="Enviar">   
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>                
+            </div>
+        </section>        
+    </main>
+    <footer>
+        <div class="container">
+            <div class="foot">
+                <div class="foot__column">
+                    <a href="mailto:recepcao@omegaacademia.com.br" target="_blank">
+                        <p class="foot__column-email">recepcao@omegaacademia.com.br</p>
+                    </a>
+                    <a href="index.html" target="_self">
+                        <img src="./sources/logotipo-white-100x.png" alt="Logotipo Academia Omega">
+                    </a>
+                </div>
+                <div class="foot__column">
+                    <a href="horarios.html" target="_self">
+                        <p class="foot__column-title">
+                            Horários de treino
+                        </p>
+                    </a>
+                </div>                
+                <div class="foot__column">
+                    <p class="foot__column-title">Unidades</p>
+                    <ul>
+                        <a href="unidades.html">
+                            <li class="foot__column-unidades">São Bernardo</li>
+                        </a>
+                        <a href="unidades.html">
+                            <li class="foot__column-unidades">Campos Elíseos</li>
+                        </a>
+                        <a href="unidades.html">
+                            <li class="foot__column-unidades">Campos Sales</li>
+                        </a>
+                        <a href="unidades.html">
+                            <li class="foot__column-unidades">Vinhedo</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="foot__column">
+                    <a href="vagas.html" target="_self">
+                        <p class="foot__column-title">
+                            Vagas
+                        </p>
+                    </a>
+                </div>
+                <div class="foot__column">
+                    <a href="contact.html" target="_self">
+                        <p class="foot__column-title">
+                            Contato
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="foot">
+                <div class="foot__column">
+                    <a href="./fraqueado.html" target="_blank">
+                        <button type="button" class="foot__btn" value="seja um franqueado">Seja um Franqueado</button>
+                    </a>
+                    <div class="foot">
+                        <a href="https://www.linkedin.com/company/rede-omega-academia" target="_blank">
+                            <i class="fi fi-brands-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/redeomegaacademia/" target="_blank">
+                            <i class="fi fi-brands-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="txt__white">Desenvolvido por AGBE Soluções em 2025. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>        
+        function limpa(){
+            document.getElementById('nomecompleto').value="";
+            document.getElementById('email').value="";
+            document.getElementById('telefone').value="";
+        }        
+    </script>
+    <script>window.gtranslateSettings = {"default_language":"pt","native_language_names":true,"detect_browser_language":true,"languages":["pt","fr","it","es","en"],"wrapper_selector":".gtranslate_wrapper","horizontal_position":"right","vertical_position":"top","alt_flags":{"en":"usa","pt":"brazil","es":"mexico","fr":"quebec"}}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>  
+    <script src="https://kit.fontawesome.com/1d6dcd39a1.js" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

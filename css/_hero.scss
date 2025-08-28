@@ -12,6 +12,7 @@
     }
     video{
         filter:contrast(1.25) saturate(.4) brightness(.25) blur(5px);
+        width:100%;
     }     
     &__title{
         font:900 9.6rem/9.6rem c.$ff;
@@ -27,22 +28,44 @@
     &__btn{
         font:c.$ff-btn;
         text-transform:uppercase;
+        background:c.$gradientPrincipal;
+        border-radius:.4rem;
         color:c.$bg;
         width:42rem;
         height:7.6rem;
         margin-top:2rem;
     }
+    &__img{
+        width:100%;
+        height:80vh;
+        object-fit: cover;
+    }
     @media screen and (max-width:1024px){
         .block{
-            top:180px;
-            left:20px;
-            width:280px;
+            top:24vh;
+            left:2rem;
+            width:90%;
         }
         &__title{
-            font:c.$ff-h1-sm;
+            font:c.$ff-h1-mm;
+            line-height:4.8rem;
         }
         &__txt{
             font:c.$ff-dsc-mm;
+            letter-spacing: 2px;
+            span::after{
+                content:"\a";
+                white-space: pre;
+            }
+        }
+        &__btn{
+            width:24rem;
+            font-size:2.4rem;
+            height:6rem;
+        }
+        video{
+            height:80vh;
+            object-fit: cover;
         }
     }
 }

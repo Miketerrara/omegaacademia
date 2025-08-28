@@ -1,65 +1,120 @@
 @use 'variable.scss' as c;
 
+@mixin flex($jtf:space-between, $alg:center, $col:row){
+    display:flex;
+    justify-content:$jtf;
+    align-items:$alg;
+    flex-direction:$col;
+}
+@mixin buttons($p: .8rem 6rem, $h:4rem, $f-btn:c.$ff-btn-modal , $b-rd:.4rem, $bg: c.$secondary, $bg-h:c.$secondary-h, $c:c.$principal, $m:2rem auto){
+    border:none;
+    background: $bg;
+    font:$f-btn;
+    padding: $p;
+    height:$h;
+    border-radius:$b-rd;
+    color:$c;
+    margin:$m;
+    transition:c.$transition;
+    cursor:pointer;
+    &:hover{
+        background:c.$gradientPrincipal-h;
+        color:c.$bgOa;
+    }
+}
+
 footer{
-    background: c.$principal-h;
+    background: c.$secondary;
     color: c.$bg;
     padding: 2.4rem 2rem;
     font: 300 1.4rem/2.8rem c.$ff;
-    img{
-        height:8rem;
-        width:auto;
-    }
     .foot{
-        display:flex;
-        flex-direction:row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap:wrap;
-        &__tel{
-            display:flex;
-            justify-content: space-between;
-            align-items:center;
-            flex-wrap:nowrap;
+        @include flex($alg:flex-start);
+        &:last-of-type{
+            @include flex($jtf:flex-end);
         }
-        strong{
-            font-weight:900;
-            color:c.$secondary;
-            transition:c.$transition;
+        &__column{
+            a{
+                margin:1rem 0;
+                cursor:pointer;
+                transition:c.$transition;
             &:hover{
-                color:c.$secondary-h;
+                color:c.$bgOa;
+            }
+            }
+            &-email{
+                font-size:1.6rem;
+                &::before{
+                    content:"\f0e0";
+                    font:var(--fa-font-regular);
+                    font-weight:400;
+                    margin-right:1rem;
+                    vertical-align:middle;
+                }
+            }
+            &-wpp{
+                font-size:1.6rem;
+                margin-bottom:5rem;
+                &::before{
+                    content:"\f232";
+                    font-family:"FontAwesome";
+                    font-size:2rem;
+                    margin-right:1rem;
+                    vertical-align: middle;
+                }
+            }
+            &-title{
+                font:c.$ff-dsc;
+                font-weight:800;
+            }
+            &-unidades{
+                margin:1rem 0;
+                font:c.$ff-dsc;
             }
         }
-    }
-    
-    .txt__white{
-        letter-spacing:4px;
-    }
-    div{
-        a{
-            font-size:1.4rem;
-            color:c.$bg;
-            transition:c.$transition;
-            &:hover{
-                color:c.$principal-h;
+        &__btn{
+            @include buttons($bg:c.$gradientWhite);
+            text-transform:uppercase;
+            &--franqueado{
+                @include buttons($bg:c.$secondary, $p:2rem 3.2rem, $h:9.6rem, $c:c.$bgOa, $m:0 auto);
+                @include flex($col:column,$alg:center);
+                text-transform:uppercase;
+                .icon{
+                    color:c.$bg;
+                }
             }
-        } 
-        p{
-            font-size:1.4rem;
         }
         i{
-            font-size:2rem;
-            margin-right:2rem;
+            font-size:2.8rem;
+            margin:0 2rem;
+            &:last-of-type{
+                margin-right:0;
+            }
         }
+    }
+    .txt__white{
+        letter-spacing:4px;
     }
     @media screen and (max-width: 1024px) {
         img{
             height:6.4rem;
         }
         .foot{
-            flex-direction: column;
-            justify-content: center;
-            align-items:center;
+            @include flex ($col:column, $jtf:center);
             gap:2rem;
+            &:last-of-type{
+                justify-content: center;
+            }
+            &__column{
+                &-email,&-wpp, &-title, &-unidades{
+                    text-align:center;
+                    font:c.$ff-dsc;
+                }
+                img{
+                    display:block;
+                    margin:0 auto;
+                }
+            }
         }
         .txt__white{
             letter-spacing:1px;

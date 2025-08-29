@@ -1,6 +1,5 @@
 @use 'variable.scss' as c;
 @use 'reset.scss';
-@use 'flexbox.scss';
 @use 'hero.scss';
 @use 'carrer.scss';
 @use 'footer.scss';
@@ -1183,7 +1182,7 @@ a{
     }
     &__registry{
         display:block;
-        margin: 0 auto;
+        margin: 1rem auto;
         width:17.6rem;
         max-height:28rem;
         background-color:c.$principal;

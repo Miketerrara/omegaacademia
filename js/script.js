@@ -16,14 +16,18 @@ const elements = {
     franquiasTitleTypes: document.querySelectorAll('.unidades__plans-title'),
     tagsBeneficios: document.querySelector('.tags'),
     tagsTitle: document.querySelector('.title-tag'),
-    tagsDsc: document.querySelector('.dsc-tag')
+    tagsDsc: document.querySelector('.dsc-tag'),
+    opt: document.getElementsByTagName('option')
 }
+// Monitorar seleção da tag select e armazenar a opção selecionada
+
 
 elements.unidadeBtn.forEach((item, index) => {
     item.addEventListener('click', ()=> {
         elements.modal[index].classList.toggle("modal--active");
     })
 });
+
 
 if (document.querySelector('.franqueado')) {
     elements.btnFranqueado.addEventListener('click', () => {
@@ -389,11 +393,10 @@ if (document.querySelector('.nav-franquia')) {
 if (document.querySelector('.horarios')) {
     const hoje = document.getElementById('today');
     const diaAtual = document.getElementById('current-day');
-
+    const hour = document.querySelectorAll('.hour');
 
     hoje.innerHTML = new Date().getDate();
     let namedDay = diaAtual.innerHTML = new Date().getDay();
-    console.log(namedDay)
     switch(namedDay) {
         case 0:
             diaAtual.innerHTML = "Domingo";
@@ -418,50 +421,56 @@ if (document.querySelector('.horarios')) {
             break;
     }
     
-    let diasMes = Array.from(document.querySelectorAll('.horarios__tab-daynumb')).filter(dia => dia !== hoje);
+    let diasMes = Array.from(document.querySelectorAll('.horarios__tab-daynumb'))
     let diasSemana = Array.from(document.querySelectorAll('.horarios__tab-day')).filter(dia => dia !== diaAtual);
     //laço que pega os números dos dias do Mês
-    for (let i = 0; i < diasMes.length; i++) {
+    for (let i = 0; i < diasMes.filter(dia => dia !== hoje).length; i++) {
         // Converte o valor de hoje.innerHTML para número
         let baseDay = parseInt(hoje.innerHTML, 10);
         // Calcula o novo valor para o dia, somando o índice + 1 ao dia base
-        let dayMonth = diasMes[i].innerHTML = baseDay + i + 1;
+        let dayMonth = diasMes.filter(dia => dia !== hoje)[i].innerHTML = baseDay + i + 1;
         
         const currentMonth = new Date().getMonth();
         const currentYear = new Date().getFullYear();
         const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
         if (dayMonth > daysInMonth) {
-            diasMes[i].innerHTML = dayMonth - daysInMonth;
+            diasMes.filter(dia => dia !== hoje)[i].innerHTML = dayMonth - daysInMonth;
         }
     }
-
-    for (let c=0; c>=7;c++){
-        let dayWeek = diasSemana[c].innerHTML = namedDay + c + 1;
-        switch(dayWeek) {
+    for (let c = 0; c < diasSemana.length; c++) {
+        let dayOfWeekIndex = (namedDay + c + 1) % 7;
+        switch(dayOfWeekIndex) {
             case 0:
-            diasSemana[c].innerHTML = "Domingo";
-            break;
+                diasSemana[c].innerHTML = "Domingo";
+                break;
             case 1:
-            diasSemana[c].innerHTML = "Segunda-feira";
-            break;
+                diasSemana[c].innerHTML = "Segunda-feira";
+                break;
             case 2:
-            diasSemana[c].innerHTML = "Terça-feira";
-            break;
+                diasSemana[c].innerHTML = "Terça-feira";
+                break;
             case 3:
-            diasSemana[c].innerHTML = "Quarta-feira";
-            break;
+                diasSemana[c].innerHTML = "Quarta-feira";
+                break;
             case 4:
-            diasSemana[c].innerHTML = "Quinta-feira";
-            break;
+                diasSemana[c].innerHTML = "Quinta-feira";
+                break;
             case 5:
-            diasSemana[c].innerHTML = "Sexta-feira";
-            break;
+                diasSemana[c].innerHTML = "Sexta-feira";
+                break;
             case 6:
-            diasSemana[c].innerHTML = "Sábado";
-            break;
+                diasSemana[c].innerHTML = "Sábado";
+                break;
         }
     }
-    console.log(new Date().getMonth());
+    let selectedOption = null;
+    const selectElement = document.querySelector('select');
+    selectedOption = selectElement.value;
+    selectElement.addEventListener('change', (e) => {
+        selectedOption = e.target.value;
+        // Você pode usar selectedOption conforme necessário
+        console.log('Opção selecionada:', selectedOption);
+    });
     
 }

@@ -395,7 +395,7 @@ if (document.querySelector('.horarios')) {
     const diaAtual = document.getElementById('current-day');
     const hour = document.querySelectorAll('.hour');
 
-    hoje.innerHTML = new Date().getDate();
+    /*hoje.innerHTML = new Date().getDate();
     let namedDay = diaAtual.innerHTML = new Date().getDay();
     switch(namedDay) {
         case 0:
@@ -463,14 +463,202 @@ if (document.querySelector('.horarios')) {
                 diasSemana[c].innerHTML = "Sábado";
                 break;
         }
-    }
+    }*/
     let selectedOption = null;
-    const selectElement = document.querySelector('select');
-    selectedOption = selectElement.value;
-    selectElement.addEventListener('change', (e) => {
+    const horarios = {
+        selectElement: document.querySelector('select'),
+        saoBernardo: document.getElementById('saoBernardo'),
+        camposEliseos: document.getElementById('camposEliseos'),
+        camposSales: document.getElementById('camposSales'),
+        vinhedo: document.getElementById('vinhedo'),
+        horariosUnits: document.getElementsByTagName('tbody'),
+        titleUnits: document.getElementsByClassName('title'),
+        columns: document.querySelectorAll('.horarios__tab-columns'),
+        hour: document.querySelectorAll('.hour'),
+        
+    }
+    const modalidades = {
+        natacaoAdulto: document.querySelector('#natacao-adulto'),
+        natacaoHidro: document.getElementById('natacao-hidro'),
+        natacaoKids: document.getElementById('natacao-kid'),
+        natacaoJuv: document.getElementById('natacao-juv')
+    }
+    selectedOption = horarios.selectElement.value;
+    if (selectedOption === '#') {
+        Array.from(horarios.horariosUnits).forEach(item => {
+            item.style.display = 'none';
+        });
+        horarios.camposEliseos.style.display = '';
+    }
+    horarios.selectElement.addEventListener('change', (e) => {
         selectedOption = e.target.value;
-        // Você pode usar selectedOption conforme necessário
-        console.log('Opção selecionada:', selectedOption);
+        if (selectedOption === 'São Bernardo') {
+            Array.from(horarios.horariosUnits).forEach(item => {
+                item.style.display = 'none';
+            })
+            horarios.saoBernardo.style.display = '';
+            horarios.titleUnits[0].innerHTML = selectedOption;
+        }
+        if (selectedOption === 'Campos Sales') {
+            Array.from(horarios.horariosUnits).forEach(item => {
+                item.style.display = 'none';
+            })
+            horarios.camposSales.style.display = '';
+            horarios.titleUnits[0].innerHTML = selectedOption;
+        }
+        if (selectedOption === 'Campos Elíseos') {
+            Array.from(horarios.horariosUnits).forEach(item => {
+                item.style.display = 'none';
+                horarios.titleUnits[0].innerHTML = selectedOption;
+            })
+            horarios.camposEliseos.style.display = '';
+            
+            
+        }
+        if (selectedOption === 'Vinhedo') {
+            Array.from(horarios.horariosUnits).forEach(item => {
+                item.style.display = 'none';
+            })
+            horarios.vinhedo.style.display = 'none';
+            horarios.titleUnits[0].innerHTML = selectedOption;
+        }
     });
     
+    /*for (let c = 0; c< horarios.columns.length; c ++) {
+
+        const hourIndex = horarios.columns + c;
+        console.log(hourIndex.children)
+
+        columnsChildren = item.children;
+        for (let i=0; i< columnsChildren.length; i ++) {
+            const dayIndex = (new Date().getDay() + i) %7;
+            switch(dayIndex) {
+                case 0: 
+                item.children[i].innerHTML = null;
+                break;
+                case 1: 
+                item.children[i].innerHTML = null;
+                item.children[4].appendChild(modalidades.natacaoAdulto.cloneNode(true));
+                break;
+                case 2: 
+                item.children[i].innerHTML = null;
+                item.children[i].appendChild(modalidades.natacaoAdulto.cloneNode(true));
+                break;
+                case 3: 
+                item.children[i].innerHTML = null;
+                item.children[i].appendChild(modalidades.natacaoAdulto.cloneNode(true));
+                break;
+                case 4: 
+                item.children[i].innerHTML = null;
+                item.children[i].appendChild(modalidades.natacaoAdulto.cloneNode(true));
+                break;
+                case 5: 
+                item.children[i].innerHTML = null;
+                item.children[i].appendChild(modalidades.natacaoAdulto.cloneNode(true));
+                break;
+                case 6: 
+                item.children[i].innerHTML = null;
+                break;
+            }
+        }
+
+    }
+    /*columnsChildren.forEach((item, i) => {
+        const dayIndex = (new Date().getDay() + i) % 7;
+    item.dataset.day = dayIndex;
+    
+    console.log(item.dataset.day[i])
+    switch(item.dataset.day) {
+    case 0:
+    columnsDaysWeek = "Domingo";
+    break;
+    case 1:
+    diaAtual.innerHTML = "Segunda-feira";
+    break;
+    case 2:
+    diaAtual.innerHTML = "Terça-feira";
+    break;
+    case 3:
+    diaAtual.innerHTML = "Quarta-feira";
+    break;
+    case 4:
+    diaAtual.innerHTML = "Quinta-feira";
+    break;
+    case 5:
+    diaAtual.innerHTML = "Sexta-feira";
+    break;
+    case 6:
+    diaAtual.innerHTML = "Sábado";
+    break;
+    }
+    });
+    */
+    // Exibir os valores no console
+
+    
+}
+if (document.querySelector('.container__carrer')){
+    const filters = {
+        btnSelect: document.querySelectorAll('.carrer__sidebar-btn'),
+        select: document.querySelectorAll('.seletores'),
+        tags: document.querySelectorAll('.modal__tags'),
+        btns: document.querySelectorAll('.check'),
+        allTags: document.querySelectorAll('.txt-tags'),
+        arrow: document.querySelectorAll('.carrer-symbol'),
+        dates: document.querySelectorAll('.txt-date'),
+        modals: document.querySelectorAll('.carrer__opportunities-modal')
+    }
+    const window = {
+        modals: document.querySelector('#modal'),
+        mdTitle: document.querySelector('#md-title'),
+        mdTags: document.querySelector('#md-tag'),
+        mdDate: document.querySelector('#md-date'),
+        title: document.querySelectorAll('.modal__title'),
+        ds:document.querySelector('.dismiss')
+    }
+
+filters.btnSelect.forEach((item, index) => {
+    item.addEventListener('click', ()=> {
+        filters.select[index].classList.toggle('seletores--active');
+        filters.arrow[index].classList.toggle('carrer-symbol--active');
+    })
+})
+function filter() {
+
+    for (let c = 0; c<filters.modals.length; c++){
+        filters.modals[c].style.display = 'none';
+    }
+    filters.btns.forEach(item =>{
+        item.addEventListener('change', ()=>{
+            for (let i = 0; i<filters.allTags.length; i++) {
+                let search = item.name.trim().toUpperCase() === filters.allTags[i].innerHTML.trim().toUpperCase();
+                if (search === true) filters.allTags[i].closest('.carrer__opportunities-modal').style.display = 'block';
+
+                console.log(search)
+            }
+        })
+    })
+    
+    const anyChecked = Array.from(filters.btns).some(f => f.checked);
+    console.log(anyChecked)
+    if (!anyChecked) {
+        filters.modals.forEach(modal => {
+            modal.style.display = "block";
+        });
+    }
+}
+filters.modals.forEach((item, index) => {
+    item.addEventListener('click', ()=> {
+        console.log(window.mdTitle.innerHTML)
+        window.modals.style.display = 'block';
+        window.mdTitle.innerHTML = window.title[index].innerHTML;
+        window.mdTags.innerHTML = filters.tags[index].innerHTML;
+        window.mdDate.innerHTML = filters.dates[index].innerHTML;
+        let modal = window.modals;
+    })
+})
+window.ds.addEventListener('click', ()=>{
+    window.modals.style.display = 'none';
+    console.log('clicou')
+})
 }

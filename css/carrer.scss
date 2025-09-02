@@ -50,6 +50,12 @@
     box-sizing:border-box;
     @include flex($alg:flex-start);
     gap:2rem;
+    &-symbol{
+        transition:c.$transition;
+        &--active{
+            rotate:90deg;
+        }
+    }
     &__sidebar{
         flex:1 1 20%;
         display:flex;
@@ -59,26 +65,35 @@
             width:100%;
             flex-direction:column;
             margin:1.2rem;
-            div{
-                margin-top:2rem;
-                margin-left:1.2rem;
-                @include flex($alg:center, $jtf:flex-start);                
-                input[type=checkbox]{                    
-                    outline:1px solid c.$principal;
-                    margin-right:1.2rem;
-                    &:hover{
-                        outline:1px solid c.$secondary;
-                        border:1px solid c.$secondary;
-                    }
-                    &:focus{
-                        outline:1px solid c.$secondary;
-                    }
+            .seletores{
+                height:0;
+                overflow:hidden;
+                transition:c.$transition;
+                &--active{
+                    height:auto;
+                    @include flex($col:column, $alg:flex-start);
+                    div{
+                        margin-top:2rem;
+                        margin-left:1.2rem;
+                        @include flex($alg:center, $jtf:flex-start);                
+                        input[type=checkbox]{                    
+                            outline:1px solid c.$principal;
+                            margin-right:1.2rem;
+                            &:hover{
+                                outline:1px solid c.$secondary;
+                                border:1px solid c.$secondary;
+                            }
+                            &:focus{
+                                outline:1px solid c.$secondary;
+                            }
+                        }
+                        label{
+                            font:300 1.6rem c.$ff;
+                            color:c.$principal-h;
+                        }
+                    }            
                 }
-                label{
-                    font:300 1.6rem c.$ff;
-                    color:c.$principal-h;
-                }
-            }            
+            }
         }
         &-btn{
             width:100%;
@@ -94,7 +109,7 @@
             height:2px;
             background:c.$formPlaceholder;
             border: transparent;
-            margin:2rem auto;
+            margin:1rem auto;
         }
     }
     &__opportunities{
@@ -131,6 +146,7 @@
         }
     }
 }
+
 .modal__title{
     margin-bottom:.4rem;
     font:c.$ff-h1-sm;
@@ -166,6 +182,62 @@
     font:c.$ff-h1-hm;
     color:#787878;
     text-transform:uppercase;
+}
+#modal{
+    display:none;
+    width:60vw;
+    height:80vh;
+    background-color:c.$bgOa;
+    position:fixed;
+    top:50%;
+    left:50%;
+    border-radius:1rem;
+    padding:4rem;
+    box-sizing: border-box;
+    transform:translate(-50%,-50%);
+    box-shadow: c.$shadow-box;
+    overflow:auto;
+    .dismiss{
+        position:absolute;
+        display:block;
+        border:1px solid c.$principal;
+        padding:1rem;
+        box-sizing: border-box;
+        border-radius:.4rem;
+        font-size:1.6rem;
+        color:c.$principal;
+        border-color:c.$principal;
+        right:4rem;
+        top:4rem;
+        cursor:pointer;
+        transition:c.$transition;
+        z-index:99;
+        &:hover{
+            transform:scale(1.05);
+        }
+    }
+    .bloco{
+        width:100%;
+        max-width:800px;
+        margin:0 auto;
+    }
+    .modal__title{
+        @extend .modal__title;
+        font-size:8rem;
+    }
+    .txt-date{
+        margin-bottom:3rem;
+    }
+    .txt{
+        font-size:2rem;
+        text-align:left;
+        line-height:2.4rem;
+    }
+    input{
+        @include btn($bg:c.$btn-positive, $c:c.$bg);
+        font-size:2.4rem;
+        text-transform:uppercase;
+    }
 }
 @media screen and (max-width:1024px){
     .carrer__title{

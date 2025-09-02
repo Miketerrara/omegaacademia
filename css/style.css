@@ -136,6 +136,12 @@ button {
   flex-direction: row;
   gap: 2rem;
 }
+.carrer-symbol {
+  transition: all 0.25s ease-in;
+}
+.carrer-symbol--active {
+  rotate: 90deg;
+}
 .carrer__sidebar {
   flex: 1 1 20%;
   display: flex;
@@ -147,7 +153,19 @@ button {
   flex-direction: column;
   margin: 1.2rem;
 }
-.carrer__sidebar-itens div {
+.carrer__sidebar-itens .seletores {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.25s ease-in;
+}
+.carrer__sidebar-itens .seletores--active {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.carrer__sidebar-itens .seletores--active div {
   margin-top: 2rem;
   margin-left: 1.2rem;
   display: flex;
@@ -155,18 +173,18 @@ button {
   align-items: center;
   flex-direction: row;
 }
-.carrer__sidebar-itens div input[type=checkbox] {
+.carrer__sidebar-itens .seletores--active div input[type=checkbox] {
   outline: 1px solid #404040;
   margin-right: 1.2rem;
 }
-.carrer__sidebar-itens div input[type=checkbox]:hover {
+.carrer__sidebar-itens .seletores--active div input[type=checkbox]:hover {
   outline: 1px solid #ed6928;
   border: 1px solid #ed6928;
 }
-.carrer__sidebar-itens div input[type=checkbox]:focus {
+.carrer__sidebar-itens .seletores--active div input[type=checkbox]:focus {
   outline: 1px solid #ed6928;
 }
-.carrer__sidebar-itens div label {
+.carrer__sidebar-itens .seletores--active div label {
   font: 300 1.6rem "Barlow Condensed", sans-serif;
   color: #8c8c8c;
 }
@@ -187,7 +205,7 @@ button {
   height: 2px;
   background: #d9d9d9;
   border: transparent;
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 .carrer__opportunities {
   flex: 1 1 80%;
@@ -223,7 +241,7 @@ button {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.modal__title {
+.modal__title, #modal .modal__title {
   margin-bottom: 0.4rem;
   font: 900 3.2rem "Barlow Condensed", sans-serif;
   color: #ed6928;
@@ -268,6 +286,73 @@ button {
   font: 800 8rem/8.4rem "Barlow Condensed", sans-serif;
   color: #787878;
   text-transform: uppercase;
+}
+
+#modal {
+  display: none;
+  width: 60vw;
+  height: 80vh;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 1rem;
+  padding: 4rem;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 1px 10px rgba(10, 10, 10, 0.2);
+  overflow: auto;
+}
+#modal .dismiss {
+  position: absolute;
+  display: block;
+  border: 1px solid #404040;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+  color: #404040;
+  border-color: #404040;
+  right: 4rem;
+  top: 4rem;
+  cursor: pointer;
+  transition: all 0.25s ease-in;
+  z-index: 99;
+}
+#modal .dismiss:hover {
+  transform: scale(1.05);
+}
+#modal .bloco {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+#modal .modal__title {
+  font-size: 8rem;
+}
+#modal .txt-date {
+  margin-bottom: 3rem;
+}
+#modal .txt, #modal .franquias__txt {
+  font-size: 2rem;
+  text-align: left;
+  line-height: 2.4rem;
+}
+#modal input {
+  border: none;
+  background-color: #009951;
+  font: 800 3.2rem "Barlow Condensed", sans-serif;
+  padding: 1.4rem 4rem;
+  border-radius: 0.4rem;
+  color: #fbfbfb;
+  margin: 2rem auto;
+  transition: all 0.25s ease-in;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+#modal input:hover {
+  background-color: #8c8c8c;
+  color: #fbfbfb;
 }
 
 @media screen and (max-width: 1024px) {

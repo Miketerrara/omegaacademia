@@ -876,7 +876,7 @@ header .gtranslate_wrapper {
   flex: 1 1 70rem;
   display: block;
   margin: 0 auto;
-  height: auto;
+  height: 80rem;
   max-width: 84rem;
   border-radius: 1rem;
   background: linear-gradient(90deg, #ED6928, #F5B958);
@@ -1007,15 +1007,13 @@ header .gtranslate_wrapper {
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
+  padding: 1rem 3.2rem;
+  box-sizing: border-box;
 }
 .boxes .box-form__right-title {
   font: 900 4.8rem "Barlow Condensed", sans-serif;
   color: #ed6928;
   text-transform: uppercase;
-}
-.boxes .box-form__right-txt {
-  font: 300 1.6rem/2.4rem "Barlow Condensed", sans-serif;
-  color: #404040;
 }
 .boxes .box-form__right-label {
   font: 300 1.6rem/2.4rem "Barlow Condensed", sans-serif;
@@ -1023,7 +1021,7 @@ header .gtranslate_wrapper {
   margin: 1rem 0;
 }
 .boxes .box-form__right-input {
-  padding: 1rem 1.6rem;
+  padding: 0.8rem 1.6rem;
   border: 1px solid #8c8c8c;
   outline: transparent;
   width: 100%;
@@ -1392,18 +1390,18 @@ header .gtranslate_wrapper {
   color: #d9d9d9;
 }
 .form fieldset {
-  margin: 1rem 0;
+  margin: 0;
   width: 100%;
-  gap: 1rem;
+  gap: 0.4rem;
 }
 .form fieldset label {
   display: block;
   font: 300 2rem/2.4rem "Barlow Condensed", sans-serif;
   color: #fbfbfb;
-  margin: 1.6rem 0;
+  margin: 1.2rem 0;
 }
 .form fieldset input, .form fieldset textarea {
-  padding: 2rem 1.2rem;
+  padding: 1.6rem 1rem;
   border-radius: 0.4rem;
   border: 1px solid transparent;
   outline: none;
@@ -1448,12 +1446,12 @@ header .gtranslate_wrapper {
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
-  margin: 4rem 8rem;
+  margin: 1rem 8rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1rem;
   height: auto;
 }
 .form-franqueado select {
@@ -1481,18 +1479,18 @@ header .gtranslate_wrapper {
   color: #d9d9d9;
 }
 .form-franqueado fieldset {
-  margin: 1rem 0;
+  margin: 0;
   width: 100%;
-  gap: 1rem;
+  gap: 0.4rem;
 }
 .form-franqueado fieldset label {
   display: block;
   font: 300 2rem/2.4rem "Barlow Condensed", sans-serif;
   color: #fbfbfb;
-  margin: 1.6rem 0;
+  margin: 1.2rem 0;
 }
 .form-franqueado fieldset input, .form-franqueado fieldset textarea {
-  padding: 2rem 1.2rem;
+  padding: 1.6rem 1rem;
   border-radius: 0.4rem;
   border: 1px solid transparent;
   outline: none;
@@ -1577,18 +1575,18 @@ header .gtranslate_wrapper {
     color: #d9d9d9;
   }
   .form-franqueado fieldset {
-    margin: 1rem 0;
+    margin: 0;
     width: 100%;
-    gap: 1rem;
+    gap: 0.4rem;
   }
   .form-franqueado fieldset label {
     display: block;
     font: 300 2rem/2.4rem "Barlow Condensed", sans-serif;
     color: #fbfbfb;
-    margin: 1.6rem 0;
+    margin: 1.2rem 0;
   }
   .form-franqueado fieldset input, .form-franqueado fieldset textarea {
-    padding: 2rem 1.2rem;
+    padding: 1.6rem 1rem;
     border-radius: 0.4rem;
     border: 1px solid transparent;
     outline: none;
@@ -1628,6 +1626,10 @@ header .gtranslate_wrapper {
     width: 100%;
     height: 5.6rem;
   }
+}
+
+.box-form-in {
+  box-sizing: border-box;
 }
 
 a {
@@ -1777,18 +1779,18 @@ a:visited {
   color: #d9d9d9;
 }
 .contact__form fieldset {
-  margin: 1rem 0;
+  margin: 0;
   width: 100%;
-  gap: 1rem;
+  gap: 0.4rem;
 }
 .contact__form fieldset label {
   display: block;
   font: 300 2rem/2.4rem "Barlow Condensed", sans-serif;
   color: #404040;
-  margin: 1.6rem 0;
+  margin: 1.2rem 0;
 }
 .contact__form fieldset input, .contact__form fieldset textarea {
-  padding: 2rem 1.2rem;
+  padding: 1.6rem 1rem;
   border-radius: 0.4rem;
   border: 1px solid #8c8c8c;
   outline: #8c8c8c;

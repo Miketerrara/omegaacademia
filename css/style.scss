@@ -113,17 +113,17 @@
         @include select;
     }
     fieldset{
-        margin: 1rem 0;
+        margin: 0;
         width:100%;
-        gap:1rem;
+        gap:.4rem;
         label{
             display:block;
             font:c.$ff-dsc-mm;
             color:$c;     
-            margin:1.6rem 0;       
+            margin:1.2rem 0;       
         }
         input, textarea{
-            padding:2rem 1.2rem;
+            padding:1.6rem 1rem;
             border-radius:.4rem;
             border: $border;
             outline:$otl;
@@ -507,7 +507,7 @@ header{
             flex:1 1 70rem;
             display:block;
             margin:0 auto;
-            height:auto;
+            height:80rem;
             max-width:84rem;
             border-radius:1rem;
             background:c.$gradientPrincipal;
@@ -611,14 +611,12 @@ header{
         }
         &__right{
             @include flex($alg:flex-start, $col:column);
+            padding:1rem 3.2rem;
+            box-sizing: border-box;
             &-title{
                 font:c.$ff-h1-mm;
                 color:c.$secondary;
                 text-transform:uppercase;
-            }
-            &-txt{
-                font:c.$ff-dsc;
-                color:c.$principal;
             }
             &-label{
                 font:c.$ff-dsc;
@@ -626,7 +624,7 @@ header{
                 margin:1rem 0;
             }
             &-input{
-                padding:1rem 1.6rem;
+                padding:.8rem 1.6rem;
                 border:1px solid c.$principal-h;
                 outline:transparent;
                 width:100%;
@@ -915,9 +913,9 @@ header{
 .form{
     @include form;
     &-franqueado{
-        @include form($m:4rem 8rem);
+        @include form($m:1rem 8rem);
         @include flex($alg:flex-start);
-        gap:2rem;
+        gap:1rem;
         height:auto;
         .submit{
             width:100%;
@@ -937,6 +935,9 @@ header{
             gap:0px;
         }
     }
+}
+.box-form-in{
+    box-sizing: border-box;
 }
 a{
     font: c.$ff-dsc;

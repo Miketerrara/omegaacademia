@@ -45,16 +45,14 @@
                         <p class="txt">Preencha seus dados ao lado e conte-nos sobre o seu problema.</p>
                     </div>
                     <div class="contact__locale">
-                        <form action="paraenviar.php" method="get" target="paraenviar" class="contact__form">
+                        <form action="https://formsubmit.co/michaeldrums19@gmail.com" method="post" class="contact__form">
                             <fieldset>
                                 <label for="nomecompleto">Nome Completo</label>
-                                <input type="text" name="nomecompleto" id="nomecompleto" placeholder="Nome Completo">
+                                <input type="text" name="name" id="nomecompleto" placeholder="Nome Completo" required>
                                 <label for="telefone">Telefone</label>
-                                <input type="tel" name="telefone" id="telefone" placeholder="(19) 9 9999.9999">
-                                <label for="cpf">CPF</label>
-                                <input type="text" name="cpf" id="cpf" placeholder="xxx.xxx.xxx-xx">
+                                <input type="tel" name="telefone" id="telefone" placeholder="(19) 9 9999.9999" required>
                                 <label for="email">E-mail</label>
-                                <input type="email" name="email" id="email" placeholder="seunome@contato.com.br">
+                                <input type="email" name="email" id="email" placeholder="seunome@contato.com.br" required>
                                 <fieldset class="radio-group" >
                                     <label>
                                         <input type="radio" name="tipo_denuncia" value="Não sou cliente" required>
@@ -90,9 +88,13 @@
                                     <option value="Nenhum">Nenhum</option>
                                 </select>
                                 <label for="assunto">Assunto</label>
-                                <input type="text" name="assunto" id="assunto" placeholder="Motivo do contato">
+                                <input type="text" name="assunto" id="assunto" placeholder="Motivo do contato" required>
                                 <label for="message">Mensagem</label>
                                 <textarea name="message" id="message" placeholder="Digite sua mensagem"></textarea>
+                                <input type="hidden" name="_next" value="https://omegaacademia.com.br/denuncia.html">
+                                <input type="hidden" name="_subject" value="🔴⚠️ Denuncia Criada ⚠️🔴">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_cc" value="marketing@omegaacademia.com.br">
                                 <input type="submit" class="submit" value="Enviar">   
                             </fieldset>
                         </form>

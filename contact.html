@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-        <header>
+    <header>
         <nav>
             <div class="container">
                 <div class="nav">
@@ -61,20 +61,24 @@
                     <div class="contact__dsc">
                         <h3 class="title">entre em contato</h3>
                         <p class="txt">Preencha o formulário que entraremos em contato o mais rápido possivel.</p>
-                        <form action="paraenviar.php" method="get" target="paraenviar" class="contact__form">
+                        <form action="https://formsubmit.co/michaeldrums19@gmail.com" method="post" class="contact__form">
                             <fieldset>
                                 <label for="nomecompleto">Nome Completo</label>
-                                <input type="text" name="nomecompleto" id="nomecompleto" placeholder="Nome Completo">
+                                <input type="text" name="name" id="nomecompleto" placeholder="Nome Completo" required>
                             </fieldset>
                             <fieldset>
                                 <label for="email">E-mail</label>
-                                <input type="email" name="email" id="email" placeholder="seunome@contato.com.br">
+                                <input type="email" name="email" id="email" placeholder="seunome@contato.com.br" required>
                                 <fieldset>
                                     <label for="telefone">Telefone</label>
-                                    <input type="tel" name="telefone" id="telefone" placeholder="(19) 9 9999.9999">
+                                    <input type="tel" name="telefone" id="telefone" placeholder="(19) 9 9999.9999" required>
                                 </fieldset>
                                 <label for="message">Mensagem</label>
                                 <textarea name="message" id="message" placeholder="Digite sua mensagem"></textarea>
+                                <input type="hidden" name="_next" value="https://omegaacademia.com.br/contact.html">
+                                <input type="hidden" name="_subject" value="😁 Novo formulário de contato!!">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_cc" value="marketing@omegaacademia.com.br">
                                 <input type="submit" class="submit" value="Enviar">                                
                             </fieldset>
                         </form>

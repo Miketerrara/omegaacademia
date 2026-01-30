@@ -5,9 +5,9 @@
     width:100%;
     .block{
         position:absolute;
-        top:180px;        
+        top:100px;        
         left:320px;
-        width:65rem;
+        width:60rem;
         z-index:2;
     }
     video{
@@ -17,13 +17,29 @@
     &__title{
         font:900 9.6rem/9.6rem c.$ff;
         color:c.$bg;
-        text-transform:uppercase;        
+        text-transform:uppercase;  
+    }
+    &__title-land{
+        @extend .hero__title;
+        strong{
+            color:c.$principal;
+        }
     }
     &__txt{
         font:c.$ff-dsc-hm;
         letter-spacing:3px;
         margin-top:.8rem;
         color:c.$bg;
+    }
+    &__txt-land{
+        @extend .hero__txt;
+        letter-spacing: 0px;
+    }
+    &__txt-destaque{
+        @extend .hero__txt;
+        letter-spacing:0px;
+        font-weight:800;
+        color: c.$principal;
     }
     &__btn{
         font:c.$ff-btn;
@@ -38,13 +54,18 @@
     &__img{
         width:100%;
         height:80vh;
+        max-height:1024px;
         object-fit: cover;
     }
     @media screen and (max-width:1024px){
+        &__img{
+            height:90vh;
+            object-fit:cover;
+        }
         .block{
-            top:24vh;
+            top:20vh;
             left:2rem;
-            width:90%;
+            width:70%;
         }
         &__title{
             font:c.$ff-h1-mm;
@@ -52,11 +73,20 @@
         }
         &__txt{
             font:c.$ff-dsc-mm;
-            letter-spacing: 2px;
+            letter-spacing: 0px;
             span::after{
                 content:"\a";
                 white-space: pre;
             }
+        }
+        &__title-land{
+            @extend .hero__title;
+        }
+        &__txt-destaque{
+            @extend .hero__txt;
+            letter-spacing:0px;
+            font-weight:800;
+            color: c.$principal;
         }
         &__btn{
             width:24rem;

@@ -107,14 +107,15 @@
         }
 }
 @mixin form(
-    $m:5.2rem 8rem, 
-    $m-label:1.2rem 0,
-    $border:1px solid transparent, 
-    $otl:none,
-    $w-input:100%, 
-    $c:c.$bg,
-    $pad:1.6rem 1rem,
-    ){
+$m:5.2rem 8rem, 
+$m-label:1.2rem 0,
+$border:1px solid transparent, 
+$otl:none,
+$w-input:100%, 
+$c:c.$bg,
+$pad:1.6rem 1rem,
+$m-i:1rem 0,
+){
     @include flex($alg:flex-start,$col:column);
     margin:$m;
     select{
@@ -138,6 +139,7 @@
             width:$w-input;
             max-width:63rem;
             box-sizing:border-box;
+            margin:$m-i;
             &::placeholder{
                 color:c.$formPlaceholder;
                 font-family:c.$ff-dsc;
@@ -149,11 +151,12 @@
         }
     }
     .submit{
-        width:24rem;
+        width:28rem;
+        height:4.4rem;
         padding:1.2rem 1rem;
         background-color:c.$principal;
         color:c.$bg;
-        font-size:1.4rem;
+        font-size:1.6rem;
         border:0px solid transparent;
         border-radius:.4rem;
         margin-top:2rem;
@@ -689,6 +692,17 @@ header{
         }
     }
 }
+.boxes-land{
+    @extend .boxes;
+    align-items:flex-start;
+    margin:10rem 0;
+    gap:12rem;
+    .box{
+        .fi{
+            margin-bottom:3rem;
+        }
+    }
+}
 .unidades{
     @include flex($jtf:center);
     flex-wrap:wrap;
@@ -986,6 +1000,13 @@ header{
         }
     }
 }
+.form-land{
+    @include form($m:2rem 0, $m-label:0, $border: transparent,$m-i:.4rem 0, $pad:1.6rem 1.6rem);
+    @media screen and (max-width:1024px){
+        @include form($m:2rem 0, $m-label:0, $m-i:.4rem 0);
+        padding:0;
+    }
+}
 .box-form-in{
     box-sizing: border-box;
 }
@@ -1050,6 +1071,7 @@ a{
         }
     }      
 }
+
 .contact{
     @include flex($jtf:flex-start, $alg:flex-start);
     gap:2.8rem;
@@ -1111,13 +1133,68 @@ a{
         }
     }
 }
+.object-land{
+    background-color: c.$secondary;
+    width:100%;
+    padding: 10rem 0;
+    margin: 10rem 0;
+    &__container{
+        max-width:128rem;
+        margin: 0 auto;
+        .title{
+            color:c.$bgOa;
+        }
+        .txt{
+            color:c.$bgOa;
+        }
+    }
+    .land-btn{
+        width:42rem;
+        height:6rem;
+        background: c.$gradientWhite;
+        color:c.$principal;
+        font: c.$ff-btn-modal;
+        text-transform: uppercase;
+        border-radius:.2rem;
+    }
+    @media screen and (max-width:1024px){ 
+        .land-btn{
+            width:36rem;
+        }
+    }
+}
 .unity{
     @include flex($col:column);
     width:100%;
     gap:10rem;
+    .unity-button{
+        width:32rem;
+        height:6rem;
+        background-color: c.$secondary;
+        color:c.$bgOa;
+        font: c.$ff-btn-modal;
+        text-transform: uppercase;
+        border-radius:.2rem;
+    }
     &__row{
         @include flex($alg:flex-start);
         gap:2rem;
+        .unity__land{
+        width:52rem;
+        padding:0;
+        .txt{
+            font-size:3.2rem !important;
+            line-height:3.6rem !important;
+        }
+        @media screen and (max-width:1024px){
+            width:100%;        
+            padding: 0 1rem;
+            .txt{
+                font-size:1.6rem !important;
+                line-height: 2.8rem !important;
+            }
+        }
+        }
         &-info{
             flex:1 1 63rem;
             max-width:63rem;
@@ -1132,6 +1209,12 @@ a{
             width:63rem;
             height:62rem;
             object-fit:cover;
+        }
+        &-landimg{
+            width:63rem;
+            height:42rem;
+            object-fit:cover;
+            border-radius:.4rem;
         }
         .tags{
             @include flex;

@@ -60,7 +60,7 @@
                                 <button type="button" class="tag--deactive">Treinamento</button>
                             </div>
                             <h4 class="title title-tag">investimento inicial</h4>
-                            <p class="txt dsc-tag">Conquiste sua franquia com um investimento inicial de: R$240 mil. Incluso aluguel de máquinas.</p>
+                            <p class="txt dsc-tag">Conquiste sua franquia com um investimento inicial de: R$80 mil. Incluso aluguel de máquinas.</p>
                         </div>
                     </div>
                 </div>                
@@ -71,11 +71,11 @@
                 <div class="cardboxes">
                     <div class="cardbox">
                         <i class="fi fi-br-stationary-bike cardbox__icon"></i>
-                        <p class="cardbox__txt">Equipamentos de primeira linha</p>                                        
+                        <p class="cardbox__txt">Equipamentos em até 100x s/ juros</p>                                        
                     </div>
                     <div class="cardbox">
                         <i class="fi fi-rr-usd-circle cardbox__icon"></i>
-                        <p class="cardbox__txt">Taxa de royalties 8% (faturamento bruto)</p>                                        
+                        <p class="cardbox__txt">Taxa de royalties 5% (faturamento bruto)</p>                                        
                     </div>
                     <div class="cardbox">
                         <i class="fi fi-rs-building cardbox__icon"></i>
@@ -89,9 +89,9 @@
                 <div class="franquias">
                     <h4 class="franquias__title">Tipos de franquias</h4>
                     <p class="franquias__txt">Oferecemos diferentes modelos de franquias para atender às suas necessidades e objetivos. Escolha entre o tamanho da sala  e descubra as opções que temos para você:</p>
-                    <button type="button" class="franquias__opt">Basic 500m²</button>
+                    <button type="button" class="franquias__opt">Basic 700m²</button>
                     <button type="button" class="franquias__opt deactive">Premium 1000m²</button>
-                    <button type="button" class="franquias__opt deactive">Clube Omega 2000m²</button>
+                    <button type="button" class="franquias__opt deactive">CT Omega 2000m²</button>
                 </div>                
                 <div class="unidades-franquias">
                     <div class="unidades__plans">
@@ -102,38 +102,18 @@
                             </div>
                             <dl class="unidades__plans-dl">
                                 <dt>Área</dt>
-                                <dd class="dl">entre 80m² à 500m²;</dd>
+                                <dd class="dl">700m²;</dd>
                             </dl>
                             <dl class="unidades__plans-dl">
                                 <dt>Royalties</dt>
-                                <dd class="dl">8%</dd>
+                                <dd class="dl">5%</dd>
                             </dl>
                             <dl class="unidades__plans-dl">
                                 <dt>Fundos de Marketing</dt>
                                 <dd class="dl">3,5%</dd>
                             </dl>
                         </div>
-                    </div>                    
-                    <div class="unidades__plans">
-                        <img src="./sources/image-franquia-condom.jpg" class="unidades__plans-img" alt="Imagem 3D da planta do condomínio">
-                        <div>
-                            <div class="unidades__plans-main">
-                                <h3 class="unidades__plans-title">Basic Condom</h3>
-                            </div>
-                            <dl class="unidades__plans-dl">
-                                <dt>Área</dt>
-                                <dd class="dl">entre 40m² à 70m²;</dd>
-                            </dl>
-                            <dl class="unidades__plans-dl">
-                                <dt>Royalties</dt>
-                                <dd class="dl">4%</dd>
-                            </dl>
-                            <dl class="unidades__plans-dl">
-                                <dt>Fundos de Marketing</dt>
-                                <dd class="dl">3%</dd>
-                            </dl>
-                        </div>
-                    </div>                                        
+                    </div>                                                            
                 </div>
             </div>
         </section>
@@ -212,25 +192,29 @@
                         <h3 class="title">Quero ser um franqueado!</h3>
                         <p class="txt">Preencha o formulário abaixo e entraremos em contato com você o mais rápido possível.</p>
                     </div>
-                    <form action="paraenviar.php" method="get" class="form-franqueado" target="paraenviar">
+                    <form action="https://formsubmit.co/michaeldrums19@gmail.com" method="post" class="form-franqueado">
                         <fieldset>
                             <label for="nomecompleto">Nome Completo</label>
-                            <input type="text" name="nomecompleto" id="nomecompleto" placeholder="Nome Completo">
+                            <input type="text" name="name" id="nomecompleto" placeholder="Nome Completo" required>
                             <label for="email">E-mail</label>
-                            <input type="email" name="email" id="email" placeholder="seunome@contato.com.br">
+                            <input type="email" name="email" id="email" placeholder="seunome@contato.com.br" required>
                             <label for="telefone">Telefone</label>
-                            <input type="tel" name="telefone" id="telefone" placeholder="(19) 9 9999.9999">
+                            <input type="tel" name="telefone" id="telefone" placeholder="(19) 9 9999.9999" required>
                             <label for="qtde">Quantidade de sócios</label>
-                            <input type="number" name="qtde" id="qtde" max="3" placeholder="Máximo 3">
+                            <input type="number" name="qtde" id="qtde" max="3" placeholder="Máximo 3" required>
                         </fieldset>
                         <fieldset>
                             <label for="renda">Renda Mensal</label>
                             <input type="number" name="renda" id="renda" placeholder="Ex: R$3.000">
                             <label for="city">Cidade</label>
-                            <input type="text" name="city" id="city" placeholder="Nome da sua cidade">
+                            <input type="text" name="cidade" id="city" placeholder="Nome da sua cidade">
                             <label for="wanted-city">Cidade de interesse</label>
-                            <input type="text" name="wanted-city" id="wanted-city" placeholder="Cidade onde será a franquia">                            
-                            <input type="submit" class="submit" value="Enviar">                                
+                            <input type="text" name="cidade-interesse" id="wanted-city" placeholder="Cidade onde será a franquia">  
+                            <input type="hidden" name="_next" value="https://omegaacademia.com.br/fraqueado.html">
+                            <input type="hidden" name="_subject" value="🎉🎉 Nova Proposta de Franquia!!">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_cc" value="marketing@omegaacademia.com.br">                          
+                            <input type="submit" class="submit" value="Enviar">
                         </fieldset>
                     </form>
                 </div>               
@@ -296,6 +280,6 @@
     <script>window.gtranslateSettings = {"default_language":"pt","native_language_names":true,"detect_browser_language":true,"languages":["pt","fr","it","es","en"],"wrapper_selector":".gtranslate_wrapper","horizontal_position":"right","vertical_position":"top","alt_flags":{"en":"usa","pt":"brazil","es":"mexico","fr":"quebec"}}</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>  
     <script src="https://kit.fontawesome.com/1d6dcd39a1.js" crossorigin="anonymous"></script>
-    <script src="./js/script.js"></script>
+    <script type="module" src="./js/script.js"></script>
 </body>
 </html>

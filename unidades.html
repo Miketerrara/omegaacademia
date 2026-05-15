@@ -101,7 +101,7 @@
                         <p class="txt">Preencha o formulário para fazer um pré-cadastro que logo uma de nossas consultoras irá entrar em contato com você.</p>
                     </div>
                     <div class="container__form-card">
-                        <form action="paraenviar.php" method="get" class="form" target="paraenviar">
+                        <form action="https://formsubmit.co/michaeldrums19@gmail.com" method="post" class="form">
                             <fieldset>
                                 <label for="">Selecione uma unidade</label>
                                 <select name="unidades" id="unidades" style="border:1px solid transparent; outline:none;">
@@ -112,13 +112,17 @@
                                     <option value="Vinhedo">Vinhedo</option>
                                 </select>
                                 <label for="nomecompleto">Nome Completo</label>
-                                <input type="text" name="nomecompleto" id="nomecompleto" placeholder="Nome Completo">
+                                <input type="text" name="name" id="nomecompleto" placeholder="Digite seu nome completo">
                             </fieldset>
                             <fieldset>
                                 <label for="email">E-mail</label>
                                 <input type="email" name="email" id="email" placeholder="seunome@contato.com.br">
                                 <label for="telefone">Telefone</label>
                                 <input type="tel" name="telefone" id="telefone" placeholder="(19) 9 9999.9999">
+                                <input type="hidden" name="_next" value="https://omegaacademia.com.br/index.html">
+                                <input type="hidden" name="_subject" value="Nova Matrícula">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_cc" value="marketing@omegaacademia.com.br">
                                 <input type="submit" class="submit" value="Enviar">                                
                             </fieldset>
                         </form>

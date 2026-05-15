@@ -16,14 +16,14 @@
     <link rel="shortcut icon" href="./sources/favicon-32x.png" sizes="32px" type="image/x-icon">
     <link rel="shortcut icon" href="./sources/favicon-64x.png" sizes="64px" type="image/x-icon">
     <link rel="shortcut icon" href="./sources/favicon-8x.png" sizes="8px" type="image/x-icon">
-    <link rel='stylesheet' href='./node_modules/@flaticon/flaticon-uicons/css/all/all.css'>
-    <link rel='stylesheet' href='./node_modules/@flaticon/flaticon-uicons/css/regular/all.css'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" crossorigin rel="preconnect">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,800;0,900;1,100;1,200;1,300;1,800;1,900&display=swap" crossorigin="anonymous" >
     <title>Omega Academia</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel='stylesheet' href='./node_modules/@flaticon/flaticon-uicons/css/all/all.css'>
+    <link rel='stylesheet' href='./node_modules/@flaticon/flaticon-uicons/css/regular/all.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
 </head>
 <body>
     <header>
@@ -31,7 +31,7 @@
             <div class="container">
                 <div class="nav">
                     <a href="index.html" target="_self">
-                        <img src="./sources/logotipo-normal-200px.png" height="60px" alt="logotipo Omega Academia">
+                        <img src="./sources/logotipo-normal-200px.png" height="60px" alt="logotipo Omega Academia" fetchpriority="high">
                     </a>
                     <ul >
                         <li class="nav__itens"><a href="horarios.html">Horários de treino</a></li>
@@ -93,7 +93,7 @@
                         <button class="hero__btn">Matricule-se Agora</button>
                     </a>
                 </div>
-                <video src="./sources/2025-08-15-Oa-video-banner_01.mp4" autoplay muted loop></video>
+                <video src="./sources/2025-08-15-Oa-video-banner_01.mp4" autoplay muted loop fetchpriority="high"></video>
             </div>
         </section>
         <section>
@@ -112,17 +112,24 @@
                         <p class="box__txt">Sempre uma perto de você</p>
                     </div> 
                     <div class="box-form">
-                        <img src="./sources/image-se-matricule-agora.jpg" class="box-form__img" alt="Image mulher pegando peso">
+                        <img src="./sources/image-se-matricule-agora.jpg" class="box-form__img" alt="Image mulher pegando peso" fetchpriority="high">
                         <div class="box-form__right">
                             <h2 class="box-form__right-title">
                                 Se matricule!
                             </h2>
-                            <p class="box-form__right-txt">Deixe o seu e-mail e telefone que entraremos em contato</p>
-                            <label for="box-email" class="box-form__right-label">E-mail</label>
-                            <input type="email" id="box-email" class="box-form__right-input" placeholder="contato@email.com">
-                            <label for="box-tel" class="box-form__right-label">Telefone</label>
-                            <input type="tel" id="box-tel" class="box-form__right-input" placeholder="(xx) x xxxx.xxxx">
-                            <input type="submit" class="box-form__right-btn" value="se matricular">
+                            <form action="https://formsubmit.co/michaeldrums19@gmail.com" method="post" class="box-form-in">
+                                <label for="name" class="box-form__right-label">Nome completo</label>
+                                <input type="text" name="name" id="name" class="box-form__right-input" placeholder="Digite seu nome completo" required>
+                                <label for="box-email" class="box-form__right-label">E-mail</label>
+                                <input type="email" id="box-email" name="email" class="box-form__right-input" placeholder="contato@email.com">
+                                <label for="box-tel" class="box-form__right-label">Telefone</label>
+                                <input type="tel" id="box-tel" name="Telefone" class="box-form__right-input" placeholder="(xx) x xxxx.xxxx" required>
+                                <input type="hidden" name="_next" value="https://omegaacademia.com.br/index.html">
+                                <input type="hidden" name="_subject" value="Nova Matrícula">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_cc" value="marketing@omegaacademia.com.br">
+                                <input type="submit" class="box-form__right-btn" value="se matricular">
+                            </form>
                         </div>
                     </div>
                 </div>                
@@ -134,7 +141,7 @@
                 <p class="txt">Sempre tem uma Omega perto de você</p>
                 <div class="unidades">
                     <div class="unidades__plans">
-                        <img src="./sources/img-sao-bernardo_01.jpg" class="unidades__plans-img" alt="imagem interior da academia no São Bernardo">
+                        <img loading="lazy" src="./sources/img-sao-bernardo/20260212_122241.jpg" class="unidades__plans-img" alt="imagem interior da academia no São Bernardo">
                         <div>
                             <div class="unidades__plans-main">
                                 <h3 class="unidades__plans-title">São Bernardo</h3>
@@ -170,7 +177,7 @@
                         </div>
                     </div>                    
                     <div class="unidades__plans">
-                        <img src="./sources/img-centro_01.jpg" class="unidades__plans-img" alt="imagem interior da academia do centro de Campinas">
+                        <img loading="lazy" src="./sources/img-centro_01.jpg" class="unidades__plans-img" alt="imagem interior da academia do centro de Campinas">
                         <div>
                             <div class="unidades__plans-main">
                                 <h3 class="unidades__plans-title">Campos Sales</h3>
@@ -206,7 +213,7 @@
                         </div>
                     </div>                    
                     <div class="unidades__plans">
-                        <img src="./sources/img-academia-vinhedo_02.jpg" class="unidades__plans-img" alt="imagem interior da academia de Vinhedo">
+                        <img loading="lazy" src="./sources/img-academia-vinhedo_02.jpg" class="unidades__plans-img" alt="imagem interior da academia de Vinhedo">
                         <div>
                             <div class="unidades__plans-main">
                                 <h3 class="unidades__plans-title">Unidade Vinhedo</h3>
@@ -242,7 +249,7 @@
                         </div>
                     </div>                    
                     <div class="unidades__plans">
-                        <img src="./sources/img-campos-eliseos_01.jpg" class="unidades__plans-img" alt="imagem interior da academia no Campos Elíseos">
+                        <img loading="lazy" src="./sources/img-campos-eliseos/img-01.png" class="unidades__plans-img" alt="imagem interior da academia no Campos Elíseos">
                         <div>
                             <div class="unidades__plans-main">
                                 <h3 class="unidades__plans-title">Campos Elíseos</h3>
@@ -277,6 +284,42 @@
                             </p>
                         </div>
                     </div>                    
+                    <div class="unidades__plans">
+                        <img loading="lazy" src="./sources/img-pl/20260202_155037.jpg" class="unidades__plans-img" alt="imagem interior da academia no Campos Elíseos">
+                        <div>
+                            <div class="unidades__plans-main">
+                                <h3 class="unidades__plans-title">Pq. da Industrias</h3>
+                                <div class="modal">                
+                                    <ul>
+                                        <a href="#" target="_blank" rel="noopener noreferrer">
+                                            <li class="modal__links">Modalidades disponíveis</li>
+                                        </a>
+                                        <hr>
+                                        <a href="photos.html" target="_blank" rel="noopener noreferrer">
+                                            <li class="modal__links">Fotos unidades</li>
+                                        </a>
+                                        <hr>
+                                        <a href="horarios.html" target="_blank" rel="noopener noreferrer">
+                                            <li class="modal__links">Grade de horário</li>
+                                        </a>
+                                        <hr>
+                                        <a href="https://wa.me/5519974063375?text=Olá!%20Estou%20interessado(a)%20em%20fazer%20academia,%20você%20poderia%20me%20passar%20o%20valor%20dos%20planos?" target="_blank">
+                                            <li class="modal__links--btn">Se Matricular</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <button type="button" class="unidades__plans-btn">
+                                    <i class="fi fi-br-menu-burger"></i>
+                                </button>
+                            </div>
+                            <p class="unidades__plans-txt">
+                                Av. Fernando Paolieri, 491 - Pq. das Industrias
+                                <br>
+                                <br>
+                                Horário de funcionamento <br>seg. à sex. das 5h às 22h; <br>sáb. 8h às 14h
+                            </p>
+                        </div>
+                    </div>                    
                 </div>
             </div>
         </section>
@@ -287,7 +330,7 @@
                     <div class="card">
                         <p class="card__quote"><strong>"</strong>Melhor academia de campinas, os equipamentos são de primeira e o atendimento excepcional<strong>"</strong></p>
                         <div class="card__footer">
-                            <img src="./sources/img-quote_01.jpg" alt="Foto da aluna Alice" class="card__footer-img">
+                            <img loading="lazy" src="./sources/img-quote_01.webp" alt="Foto da aluna Alice" class="card__footer-img">
                             <div class="card__footer-left">
                                 <h4 class="card__footer-title">Alice M.</h4>
                                 <p class="card__footer-txt">São Bernardo</p>
@@ -298,7 +341,7 @@
                     <div class="card">
                         <p class="card__quote"><strong>"</strong>Amo de paixão essa academia, professores e recepcionistas bem atenciosos, vestiário limpinho, com chuveiros. Super recomendo<strong>"</strong></p>
                         <div class="card__footer">
-                            <img src="./sources/img-quote_02.jpg" alt="Foto da aluna Alice" class="card__footer-img">
+                            <img loading="lazy" src="./sources/img-quote_02.webp" alt="Foto da aluna Alice" class="card__footer-img">
                             <div class="card__footer-left">
                                 <h4 class="card__footer-title">Michelle Cavalcanti</h4>
                                 <p class="card__footer-txt">São Bernardo</p>
@@ -309,7 +352,7 @@
                     <div class="card">
                         <p class="card__quote"><strong>"</strong>Ótima localização, equipamentose suporte dos profissionais.<strong>"</strong></p>
                         <div class="card__footer">
-                            <img src="./sources/img-quote_03.jpg" alt="Foto da aluna Alice" class="card__footer-img">
+                            <img loading="lazy" src="./sources/img-quote_03.webp" alt="Foto da aluna Alice" class="card__footer-img">
                             <div class="card__footer-left">
                                 <h4 class="card__footer-title">Allison Rodrigues</h4>
                                 <p class="card__footer-txt">Campos Sales</p>
@@ -327,7 +370,7 @@
                         <p class="txt">Preencha o formulário para fazer um pré-cadastro que logo uma de nossas consultoras irá entrar em contato com você.</p>
                     </div>
                     <div class="container__form-card">
-                        <form action="paraenviar.php" method="get" class="form" target="paraenviar">
+                        <form action="https://formsubmit.co/michaeldrums19@gmail.com" method="post" class="form">
                             <fieldset>
                                 <label for="">Selecione uma unidade</label>
                                 <select name="unidades" id="unidades" style="border:1px solid transparent; outline:none;">
@@ -338,13 +381,17 @@
                                     <option value="Vinhedo">Vinhedo</option>
                                 </select>
                                 <label for="nomecompleto">Nome Completo</label>
-                                <input type="text" name="nomecompleto" id="nomecompleto" placeholder="Nome Completo">
+                                <input type="text" name="name" id="nomecompleto" placeholder="Digite seu nome completo">
                             </fieldset>
                             <fieldset>
                                 <label for="email">E-mail</label>
                                 <input type="email" name="email" id="email" placeholder="seunome@contato.com.br">
                                 <label for="telefone">Telefone</label>
                                 <input type="tel" name="telefone" id="telefone" placeholder="(19) 9 9999.9999">
+                                <input type="hidden" name="_next" value="https://omegaacademia.com.br/index.html">
+                                <input type="hidden" name="_subject" value="Nova Matrícula">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_cc" value="marketing@omegaacademia.com.br">
                                 <input type="submit" class="submit" value="Enviar">                                
                             </fieldset>
                         </form>
@@ -361,7 +408,7 @@
                         <p class="foot__column-email">recepcao@omegaacademia.com.br</p>
                     </a>
                     <a href="index.html" target="_self">
-                        <img src="./sources/logotipo-white-100x.png" alt="Logotipo Academia Omega">
+                        <img loading="lazy" src="./sources/logotipo-white-100x.png" alt="Logotipo Academia Omega">
                     </a>
                 </div>
                 <div class="foot__column">
@@ -430,8 +477,8 @@
         }        
     </script>
     <script>window.gtranslateSettings = {"default_language":"pt","native_language_names":true,"detect_browser_language":true,"languages":["pt","fr","it","es","en"],"wrapper_selector":".gtranslate_wrapper","horizontal_position":"right","vertical_position":"top","alt_flags":{"en":"usa","pt":"brazil","es":"mexico","fr":"quebec"}}</script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>  
+    <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>   
     <script src="https://kit.fontawesome.com/1d6dcd39a1.js" crossorigin="anonymous"></script>
-    <script src="./js/script.js"></script>
+    <script type="module" src="./js/script.js"></script>
 </body>
 </html>

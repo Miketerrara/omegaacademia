@@ -1,3 +1,58 @@
+import { gsap } from "gsap"
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// ScrollSmoother requires ScrollTrigger
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
+
+let animateTrigger = {
+    scrollTrigger: {
+            trigger: ".unity__row-img",
+            start: "top 80%",
+        },
+        opacity:0,
+        y:100,
+        duration:1,
+        ease: "power2.out"
+}
+let animateTriggerStag = {
+    scrollTrigger: {
+        trigger: ".unity__row-img",
+        start:"top 80%",
+        
+    },
+    opacity:0,
+    y:100,
+    duration:1,
+    ease:"power2.out",
+    stagger:.4,
+}
+
+function animate() {
+    gsap.from(".nav-franquia", {
+        y:-100,
+        duration:0.8,
+        opacity:0,
+        ease: "power2.out"
+    });
+    gsap.from(".hero", {
+        y:50,
+        duration:.8,
+        opacity:0,
+        ease:"power2.out",
+    }, "-=1");
+    gsap.from(".unity__row-img", animateTrigger);
+    gsap.from(".tag", animateTriggerStag);
+    gsap.from(".tag--deactive", animateTriggerStag);
+    gsap.from(".title", animateTrigger);
+    gsap.from(".dsc-tag", animateTrigger);
+    gsap.from(".cardbox", animateTriggerStag);
+}
+
+animate();
+
 const elements = {    
     burgerToggle: document.querySelector('.toggle'),
     menu: document.querySelector('.menu-toggle'),
@@ -17,10 +72,12 @@ const elements = {
     tagsBeneficios: document.querySelector('.tags'),
     tagsTitle: document.querySelector('.title-tag'),
     tagsDsc: document.querySelector('.dsc-tag'),
-    opt: document.getElementsByTagName('option')
+    opt: document.getElementsByTagName('option'),
+    block: document.querySelector('.block'),
+    container: document.querySelector('.container')
 }
-// Monitorar seleção da tag select e armazenar a opção selecionada
 
+// Monitorar seleção da tag select e armazenar a opção selecionada
 
 elements.unidadeBtn.forEach((item, index) => {
     item.addEventListener('click', ()=> {
@@ -167,6 +224,7 @@ if (document.querySelector('#beneficios')) {
     });
     
 }
+
 elements.faq.forEach((item, index) => {
     item.addEventListener('click', () => {
         console.log('clicou certo!')
@@ -270,6 +328,13 @@ function switchModal(index){
 //document.querySelector(".modal__infos").children[0]
 let modalEquip = document.getElementById('m01'); 
 
+function resizeScreen() {
+    let tamTela = window.innerWidth;
+    let tamTelaRestrita = parseInt(getComputedStyle(elements.container).width);
+    let tamTelaUtil = (tamTela - tamTelaRestrita) / 2;
+    elements.block.style.left = `${tamTelaUtil}px`;
+}
+
 if (document.querySelector('.toggle')) {
     elements.burgerToggle.addEventListener('click', () =>{
         elements.menu.classList.toggle('menu-toggle--active');
@@ -278,6 +343,13 @@ if (document.querySelector('.toggle')) {
     elements.close.addEventListener('click', () =>{
         elements.burgerToggle.dispatchEvent(new Event('click'));
     });
+    if(window.innerWidth >= 1024 && document.querySelector('.block')){
+        resizeScreen();
+        window.addEventListener('resize', ()=>{
+            resizeScreen();
+        })
+        console.log(elements.block.style.left);
+    }
 
 }
 if (document.querySelector('.nav-franquia')) {
@@ -394,76 +466,6 @@ if (document.querySelector('.horarios')) {
     const hoje = document.getElementById('today');
     const diaAtual = document.getElementById('current-day');
     const hour = document.querySelectorAll('.hour');
-
-    /*hoje.innerHTML = new Date().getDate();
-    let namedDay = diaAtual.innerHTML = new Date().getDay();
-    switch(namedDay) {
-        case 0:
-            diaAtual.innerHTML = "Domingo";
-            break;
-        case 1:
-            diaAtual.innerHTML = "Segunda-feira";
-            break;
-        case 2:
-            diaAtual.innerHTML = "Terça-feira";
-            break;
-        case 3:
-            diaAtual.innerHTML = "Quarta-feira";
-            break;
-        case 4:
-            diaAtual.innerHTML = "Quinta-feira";
-            break;
-        case 5:
-            diaAtual.innerHTML = "Sexta-feira";
-            break;
-        case 6:
-            diaAtual.innerHTML = "Sábado";
-            break;
-    }
-    
-    let diasMes = Array.from(document.querySelectorAll('.horarios__tab-daynumb'))
-    let diasSemana = Array.from(document.querySelectorAll('.horarios__tab-day')).filter(dia => dia !== diaAtual);
-    //laço que pega os números dos dias do Mês
-    for (let i = 0; i < diasMes.filter(dia => dia !== hoje).length; i++) {
-        // Converte o valor de hoje.innerHTML para número
-        let baseDay = parseInt(hoje.innerHTML, 10);
-        // Calcula o novo valor para o dia, somando o índice + 1 ao dia base
-        let dayMonth = diasMes.filter(dia => dia !== hoje)[i].innerHTML = baseDay + i + 1;
-        
-        const currentMonth = new Date().getMonth();
-        const currentYear = new Date().getFullYear();
-        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-
-        if (dayMonth > daysInMonth) {
-            diasMes.filter(dia => dia !== hoje)[i].innerHTML = dayMonth - daysInMonth;
-        }
-    }
-    for (let c = 0; c < diasSemana.length; c++) {
-        let dayOfWeekIndex = (namedDay + c + 1) % 7;
-        switch(dayOfWeekIndex) {
-            case 0:
-                diasSemana[c].innerHTML = "Domingo";
-                break;
-            case 1:
-                diasSemana[c].innerHTML = "Segunda-feira";
-                break;
-            case 2:
-                diasSemana[c].innerHTML = "Terça-feira";
-                break;
-            case 3:
-                diasSemana[c].innerHTML = "Quarta-feira";
-                break;
-            case 4:
-                diasSemana[c].innerHTML = "Quinta-feira";
-                break;
-            case 5:
-                diasSemana[c].innerHTML = "Sexta-feira";
-                break;
-            case 6:
-                diasSemana[c].innerHTML = "Sábado";
-                break;
-        }
-    }*/
     let selectedOption = null;
     const horarios = {
         selectElement: document.querySelector('select'),

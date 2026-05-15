@@ -90,7 +90,9 @@
                     <h4 class="franquias__title">Tipos de franquias</h4>
                     <p class="franquias__txt">Oferecemos diferentes modelos de franquias para atender às suas necessidades e objetivos. Escolha entre o tamanho da sala  e descubra as opções que temos para você:</p>
                     <button type="button" class="franquias__opt">Basic 700m²</button>
+                    <button type="button" class="franquias__opt">Basic 500m² à 700m²</button>
                     <button type="button" class="franquias__opt deactive">Premium 1000m²</button>
+                    <button type="button" class="franquias__opt deactive">CT Omega 2000m²</button>
                     <button type="button" class="franquias__opt deactive">CT Omega 2000m²</button>
                 </div>                
                 <div class="unidades-franquias">
@@ -193,14 +195,19 @@
                         <p class="txt">Preencha o formulário abaixo e entraremos em contato com você o mais rápido possível.</p>
                     </div>
                     <form action="https://formsubmit.co/michaeldrums19@gmail.com" method="post" class="form-franqueado">
+                    <form action="https://formsubmit.co/michaeldrums19@gmail.com" method="post" class="form-franqueado">
                         <fieldset>
                             <label for="nomecompleto">Nome Completo</label>
                             <input type="text" name="name" id="nomecompleto" placeholder="Nome Completo" required>
+                            <input type="text" name="name" id="nomecompleto" placeholder="Nome Completo" required>
                             <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email" placeholder="seunome@contato.com.br" required>
                             <input type="email" name="email" id="email" placeholder="seunome@contato.com.br" required>
                             <label for="telefone">Telefone</label>
                             <input type="tel" name="telefone" id="telefone" placeholder="(19) 9 9999.9999" required>
+                            <input type="tel" name="telefone" id="telefone" placeholder="(19) 9 9999.9999" required>
                             <label for="qtde">Quantidade de sócios</label>
+                            <input type="number" name="qtde" id="qtde" max="3" placeholder="Máximo 3" required>
                             <input type="number" name="qtde" id="qtde" max="3" placeholder="Máximo 3" required>
                         </fieldset>
                         <fieldset>
@@ -208,7 +215,14 @@
                             <input type="number" name="renda" id="renda" placeholder="Ex: R$3.000">
                             <label for="city">Cidade</label>
                             <input type="text" name="cidade" id="city" placeholder="Nome da sua cidade">
+                            <input type="text" name="cidade" id="city" placeholder="Nome da sua cidade">
                             <label for="wanted-city">Cidade de interesse</label>
+                            <input type="text" name="cidade-interesse" id="wanted-city" placeholder="Cidade onde será a franquia">  
+                            <input type="hidden" name="_next" value="https://omegaacademia.com.br/fraqueado.html">
+                            <input type="hidden" name="_subject" value="🎉🎉 Nova Proposta de Franquia!!">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_cc" value="marketing@omegaacademia.com.br">                          
+                            <input type="submit" class="submit" value="Enviar">
                             <input type="text" name="cidade-interesse" id="wanted-city" placeholder="Cidade onde será a franquia">  
                             <input type="hidden" name="_next" value="https://omegaacademia.com.br/fraqueado.html">
                             <input type="hidden" name="_subject" value="🎉🎉 Nova Proposta de Franquia!!">

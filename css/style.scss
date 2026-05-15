@@ -106,7 +106,16 @@
             }
         }
 }
-@mixin form($m:5.2rem 8rem, $border:1px solid transparent, $otl:none,$w-input:100%, $c:c.$bg){
+@mixin form(
+$m:5.2rem 8rem, 
+$m-label:1.2rem 0,
+$border:1px solid transparent, 
+$otl:none,
+$w-input:100%, 
+$c:c.$bg,
+$pad:1.6rem 1rem,
+$m-i:1rem 0,
+){
     @include flex($alg:flex-start,$col:column);
     margin:$m;
     select{
@@ -115,21 +124,22 @@
     fieldset{
         margin: 0;
         width:100%;
-        gap:.4rem;
+        gap:1rem;
         label{
             display:block;
             font:c.$ff-dsc-mm;
             color:$c;     
-            margin:1.2rem 0;       
+            margin:1.6rem 0;       
         }
         input, textarea{
-            padding:1.6rem 1rem;
+            padding:2rem 1.2rem;
             border-radius:.4rem;
             border: $border;
             outline:$otl;
             width:$w-input;
             max-width:63rem;
             box-sizing:border-box;
+            margin:$m-i;
             &::placeholder{
                 color:c.$formPlaceholder;
                 font-family:c.$ff-dsc;
@@ -141,14 +151,18 @@
         }
     }
     .submit{
-        width:24rem;
+        width:28rem;
+        height:4.4rem;
         padding:1.2rem 1rem;
         background-color:c.$principal;
         color:c.$bg;
-        font-size:1.4rem;
+        font-size:1.6rem;
         border:0px solid transparent;
         border-radius:.4rem;
         margin-top:2rem;
+    }
+    textarea{
+        resize:vertical;
     }
     @media screen and (max-width:1024px) {
         padding:0 1.2rem;
@@ -678,6 +692,17 @@ header{
         }
     }
 }
+.boxes-land{
+    @extend .boxes;
+    align-items:flex-start;
+    margin:10rem 0;
+    gap:12rem;
+    .box{
+        .fi{
+            margin-bottom:3rem;
+        }
+    }
+}
 .unidades{
     @include flex($jtf:center);
     flex-wrap:wrap;
@@ -756,6 +781,45 @@ header{
                 font:300 1.6rem c.$ff;
                 color:c.$principal-h;
             }
+        }
+    }
+    .destaque{
+        position:relative;
+        background-color:c.$destaque;
+        border-radius:1.2rem;
+        overflow:hidden;
+        .unidades__plans-title{
+            background-color:c.$bgOa;
+            color:c.$secondary;
+        }
+        .unidades__plans-btn{
+            i{
+                color:c.$secondary;
+            }
+        }
+        .unidades__plans-txt{
+            color:c.$bgOa;
+        }
+        .unidades__plans-destaque{
+            position:absolute;
+            top:0;
+            font: c.$ff-h1-sm;
+            color:c.$bg;
+            text-transform:uppercase;
+            text-align:center;
+            padding-top:1rem;
+            width:100%;
+            height:4.8rem;
+            background-color: c.$secondary;
+        }
+        .form-modal{
+            @include form($m:0 2rem 2rem, $c:c.$secondary, $otl:1px solid c.$secondary, $pad:1rem, $m-label:.8rem 0);
+            .submit{
+                text-transform: uppercase;
+                font-weight:800;
+                letter-spacing:1px;
+            }
+            
         }
     }
     @media screen and (max-width:1024px) {
@@ -936,9 +1000,6 @@ header{
         }
     }
 }
-.box-form-in{
-    box-sizing: border-box;
-}
 a{
     font: c.$ff-dsc;
     color:c.$bg;
@@ -1000,6 +1061,7 @@ a{
         }
     }      
 }
+
 .contact{
     @include flex($jtf:flex-start, $alg:flex-start);
     gap:2.8rem;
@@ -1061,13 +1123,68 @@ a{
         }
     }
 }
+.object-land{
+    background-color: c.$secondary;
+    width:100%;
+    padding: 10rem 0;
+    margin: 10rem 0;
+    &__container{
+        max-width:128rem;
+        margin: 0 auto;
+        .title{
+            color:c.$bgOa;
+        }
+        .txt{
+            color:c.$bgOa;
+        }
+    }
+    .land-btn{
+        width:42rem;
+        height:6rem;
+        background: c.$gradientWhite;
+        color:c.$principal;
+        font: c.$ff-btn-modal;
+        text-transform: uppercase;
+        border-radius:.2rem;
+    }
+    @media screen and (max-width:1024px){ 
+        .land-btn{
+            width:36rem;
+        }
+    }
+}
 .unity{
     @include flex($col:column);
     width:100%;
     gap:10rem;
+    .unity-button{
+        width:32rem;
+        height:6rem;
+        background-color: c.$secondary;
+        color:c.$bgOa;
+        font: c.$ff-btn-modal;
+        text-transform: uppercase;
+        border-radius:.2rem;
+    }
     &__row{
         @include flex($alg:flex-start);
         gap:2rem;
+        .unity__land{
+        width:52rem;
+        padding:0;
+        .txt{
+            font-size:3.2rem !important;
+            line-height:3.6rem !important;
+        }
+        @media screen and (max-width:1024px){
+            width:100%;        
+            padding: 0 1rem;
+            .txt{
+                font-size:1.6rem !important;
+                line-height: 2.8rem !important;
+            }
+        }
+        }
         &-info{
             flex:1 1 63rem;
             max-width:63rem;
@@ -1082,6 +1199,12 @@ a{
             width:63rem;
             height:62rem;
             object-fit:cover;
+        }
+        &-landimg{
+            width:63rem;
+            height:42rem;
+            object-fit:cover;
+            border-radius:.4rem;
         }
         .tags{
             @include flex;
